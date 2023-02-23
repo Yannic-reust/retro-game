@@ -1,0 +1,12 @@
+.jump {
+    transform: translate(0px, -500px);
+  }
+  
+  @keyframes walk {
+    from {
+      background-position: 0 -1800px;
+    }
+    to {
+      background-position: -1601px -1800px;
+    }
+  }

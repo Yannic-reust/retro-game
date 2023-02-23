@@ -3,7 +3,7 @@ var jumping = false;
 document.addEventListener(
   "keydown",
   (event) => {
-    console.log("junp");
+
     var code = event.code;
     if (code === "KeyW" && !jumping) {
       jump();
@@ -20,6 +20,6 @@ function jump() {
     elem.classList.remove("jump");
     setTimeout(() => {
       jumping = false;
-    }, 500);
-  }, 500);
+    }, 450);
+  }, 450);
 }

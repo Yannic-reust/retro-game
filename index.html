@@ -1,26 +1,38 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
   <head>
-    <meta charset="utf-8">
-    <title>Beschreibung der Seite (erscheint in der Titelzeile des Browsers)</title>
+    <meta charset="utf-8" />
+    <title>Retro Jumper</title>
     <script defer src="./index.js"></script>
-    <link rel="stylesheet" href="main.css">
+    <script defer src="./js/background.js"></script>
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="./css/background.css" />
+    <link rel="stylesheet" href="./css/animations.css" />
   </head>
   <body>
-    <div class="wrapper">
-      <div class="background"></div> 
-      <div id="character-wrapper" >
-
-        <div id="character"></div>
-      </div>
-     
+    <div id="character-wrapper">
+      <div id="character"></div>
     </div>
-   
-       
-       
-       
-       
-        
+    <div class="scroll-parent">
+      <div class="scroll-element" id="primary">
+        <div class="flex">
+          <div id="ground"></div>
+          <div id="clouds"></div>
+          <div id="background"></div>
+        </div>
+      </div>
+      <div class="scroll-element" id="secondary">
+        <div class="flex">
+          <div id="ground"></div>
+          <div id="clouds"></div>
+          <div id="background"></div>
+        </div>
+      </div>
+    </div>
 
+    <!-- <div class="wrapper">
+      <div class="background"></div>
+     
+    </div> -->
   </body>
 </html>
