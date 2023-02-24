@@ -1,9 +1,7 @@
 
 const primaryAnim = primary.getAnimations()[0];
 const secondaryAnim = secondary.getAnimations()[0];
-//const character = 
-
-
+const charAnim = character.getAnimations()[0];
 
 let lastDirection = 'right';
 let atStart = true;
@@ -23,11 +21,11 @@ const moveLeft = function(){
     if (lastDirection==='left') {
         primaryAnim.play();
         secondaryAnim.play();
-      
+        charAnim.play();
     } else {
         primaryAnim.reverse();
         secondaryAnim.reverse();
-       
+        charAnim.reverse();
     }
     lastDirection = 'left';
 };
@@ -39,10 +37,12 @@ const moveRight = function(){
     if (lastDirection==='right') {
         primaryAnim.play();
         secondaryAnim.play();
+        charAnim.play();
        
     } else {
         primaryAnim.reverse();
         secondaryAnim.reverse();
+        charAnim.reverse();
     
     }
 
@@ -52,8 +52,7 @@ const moveRight = function(){
 const pause = function(){
     primaryAnim.pause();
     secondaryAnim.pause();
-  
-
+    charAnim.pause();
 };
 
 

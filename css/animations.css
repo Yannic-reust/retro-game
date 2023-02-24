@@ -1,5 +1,14 @@
+#character {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background: url("../../assets/player.png") no-repeat;
+  animation: walk 0.3s steps(4) infinite;
+  scale: 0.3;
+}
+
 .jump {
-    transform: translate(0px, -500px);
+    transform: translate(0px, -100px);
   }
   
   @keyframes walk {

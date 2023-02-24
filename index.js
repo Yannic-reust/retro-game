@@ -20,6 +20,6 @@ function jump() {
     elem.classList.remove("jump");
     setTimeout(() => {
       jumping = false;
-    }, 450);
-  }, 450);
+    }, 250);
+  }, 250);
 }
