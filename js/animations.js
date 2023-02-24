@@ -3,6 +3,8 @@ const primaryAnim = primary.getAnimations()[0];
 const secondaryAnim = secondary.getAnimations()[0];
 const charAnim = character.getAnimations()[0];
 
+
+
 let lastDirection = 'right';
 let atStart = true;
 let atEnd = false;
@@ -10,6 +12,7 @@ let atEnd = false;
 
 primary.addEventListener("animationend", () => {
     primaryAnim.pause();
+
     if (lastDirection === 'right') atEnd = true;
     if (lastDirection === 'left') atStart = true;
 });

@@ -25,6 +25,15 @@ body {
   transition: transform 0.5s;
   z-index: 9999;
 }
+#enemie{
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  z-index: 9998;
+  position: absolute;
+  bottom:140px;
+  left:300px;
+}
 
 
 
