@@ -1,25 +1,21 @@
+const primaryAnim = primary.getAnimations()[0];
+const secondaryAnim = secondary.getAnimations()[0];
+const charAnim = character.getAnimations()[0];
+const char = document.getElementById("character");
+const enemieAnim = document.getElementById("enemie");
+
 var jumping = false;
 
-document.addEventListener(
-  "keydown",
-  (event) => {
-
-    var code = event.code;
-    if (code === "KeyW" && !jumping) {
-      jump();
-    }
-  },
-  false
-);
-
 function jump() {
-  jumping = true;
-  var elem = document.getElementById("character-wrapper");
-  elem.classList.add("jump");
-  setTimeout(() => {
-    elem.classList.remove("jump");
+  if (!jumping) {
+    jumping = true;
+    var elem = document.getElementById("character-wrapper");
+    elem.classList.add("jump");
     setTimeout(() => {
-      jumping = false;
+      elem.classList.remove("jump");
+      setTimeout(() => {
+        jumping = false;
+      }, 250);
     }, 250);
-  }, 250);
+  }
 }
