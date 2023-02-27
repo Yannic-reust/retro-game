@@ -1,10 +1,15 @@
 function checkColison() {
-  //console.log("enemie y" + enemieAnim.getBoundingClientRect().y);
-  //console.log("enemie x" + enemieAnim.getBoundingClientRect().x);
-  console.log("char y" + char.getBoundingClientRect().y);
-  console.log("char x" + char.getBoundingClientRect().x);
-
-  if (enemieAnim.getBoundingClientRect().x == char.getBoundingClientRect().x) {
-    console.log("asd");
+  var object_1 = enemieAnim.getBoundingClientRect();
+  var object_2 = char.getBoundingClientRect();
+  if (
+    object_1.left < object_2.left + object_2.width &&
+    object_1.left + object_1.width > object_2.left &&
+    object_1.top < object_2.top + object_2.height &&
+    object_1.top + object_1.height > object_2.top
+  ) {
+    //rect.classList.add("collide");
+    console.log("colide");
+  } else {
+    //rect.classList.remove("collide");
   }
 }
