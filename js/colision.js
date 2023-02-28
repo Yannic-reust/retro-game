@@ -9,6 +9,8 @@ function checkColison() {
   ) {
     //rect.classList.add("collide");
     console.log("colide");
+    var x = document.getElementById("infoText");
+    x.classList.add("visible");
   } else {
     //rect.classList.remove("collide");
   }

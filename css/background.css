@@ -1,23 +1,46 @@
-:root {
-  --speed: 4;
+#background1 {
+  animation: primary 20s linear infinite;
+}
+#background2 {
+  animation: secondary 20s linear infinite;
 }
 
-.scroll-parent {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow-x: hidden;
+#clouds1 {
+  animation: primary 30s linear infinite;
 }
-
-.scroll-element {
-  width: inherit;
-  height: inherit;
+#clouds2 {
+  animation: secondary 30s linear infinite;
+}
+#ground1 {
+  animation: primary 10s linear infinite;
+}
+#ground2 {
+  animation: secondary 10s linear infinite;
+}
+.clouds {
   position: absolute;
-  left: 0%;
-  top: 0%;
+  left: 0;
+  top: 200px;
+  width: 3639px;
+  height: 200px;
+  background-image: url("../assets/clouds.png");
+  background-repeat: repeat-x;
+  animation-play-state: paused;
+  z-index: 3;
+}
+.ground {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 3739px;
+  height: 368px;
+  background-image: url("../assets/ground.png");
+  background-repeat: repeat;
+  animation-play-state: paused;
+  z-index: 3;
 }
 
-#background {
+.background {
   position: absolute;
   left: 0;
   top: 0;
@@ -26,54 +49,20 @@
   background-image: url("../assets/background.png");
   background-repeat: repeat-x;
   animation-duration: 15s;
-  animation-name: scrolling;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  animation-play-state: paused;
+
   z-index: 1;
-  background-color: blue;
   object-fit: fill;
+  animation-play-state: paused;
   background-size: cover;
 }
-#clouds {
-  position: absolute;
-  left: 0;
-  top: 60px;
-  width: 3639px;
-  height: 64px;
-  background-image: url("../assets/clouds.png");
-  background-repeat: repeat-x;
-  animation-duration: 10s;
-  animation-name: scrolling;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  animation-play-state: paused;
-  z-index: 3;
-}
 
-#ground {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 3739px;
-  height: 368px;
-  background-image: url("../assets/ground.png");
-  background-repeat: repeat;
-  animation-duration: 5s;
-  animation-name: scrolling;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  animation-play-state: paused;
-  z-index: 3;
-}
-
-#primary {
+/*#primary {
   animation: primary 10s linear infinite;
 }
 
 #secondary {
   animation: secondary 10s linear infinite;
-}
+}*/
 
 @keyframes primary {
   from {
