@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: Poppins;
 }
 
 body {
@@ -34,6 +35,7 @@ body {
 #character-wrapper {
   width: 100px;
   height: 150px;
+  margin-left: 50px;
   z-index: 2;
   position: absolute;
   bottom: 28px;
@@ -55,7 +57,6 @@ body {
   justify-content: space-between;
 }
 #infoText {
-  font-family: Poppins;
   visibility: hidden;
   background-color: white;
   border-radius: 8px;

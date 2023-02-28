@@ -6,6 +6,33 @@
   animation: walk 0.3s steps(4) infinite;
 }
 
+#infoGuy {
+  height: 100%;
+}
+
+#background1 {
+  animation: primary 20s linear infinite;
+}
+#background2 {
+  animation: secondary 20s linear infinite;
+}
+
+#clouds1 {
+  animation: primary 30s linear infinite;
+}
+#clouds2 {
+  animation: secondary 30s linear infinite;
+}
+#ground1 {
+  animation: primary 10s linear infinite;
+}
+#ground2 {
+  animation: secondary 10s linear infinite;
+}
+#infoGuyBox {
+  animation: infoGuy 10s linear infinite;
+}
+
 .jump {
   transform: translate(0px, -100px);
 }
@@ -19,7 +46,29 @@
   }
 }
 
-#infoGuy {
-  background: url("../assets/enemie.gif") no-repeat;
-  height: 100%;
+@keyframes infoGuy {
+  from {
+    left: 300px;
+  }
+  to {
+    left: -3639px;
+  }
+}
+
+@keyframes primary {
+  from {
+    left: 0px;
+  }
+  to {
+    left: -3639px;
+  }
+}
+
+@keyframes secondary {
+  from {
+    left: 3639px;
+  }
+  to {
+    left: 0px;
+  }
 }

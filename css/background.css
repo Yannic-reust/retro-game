@@ -1,22 +1,3 @@
-#background1 {
-  animation: primary 20s linear infinite;
-}
-#background2 {
-  animation: secondary 20s linear infinite;
-}
-
-#clouds1 {
-  animation: primary 30s linear infinite;
-}
-#clouds2 {
-  animation: secondary 30s linear infinite;
-}
-#ground1 {
-  animation: primary 10s linear infinite;
-}
-#ground2 {
-  animation: secondary 10s linear infinite;
-}
 .clouds {
   position: absolute;
   left: 0;
@@ -54,22 +35,4 @@
   object-fit: fill;
   animation-play-state: paused;
   background-size: cover;
-}
-
-@keyframes primary {
-  from {
-    left: 0px;
-  }
-  to {
-    left: -3639px;
-  }
-}
-
-@keyframes secondary {
-  from {
-    left: 3639px;
-  }
-  to {
-    left: 0px;
-  }
 }

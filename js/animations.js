@@ -14,6 +14,7 @@ const moveAll = function () {
   background2Anim.play();
   ground1Anim.play();
   ground2Anim.play();
+  infoGuyBoxAnim.play();
   charAnim.play();
 };
 
@@ -24,17 +25,24 @@ const reverseAll = function () {
   background2Anim.reverse();
   ground1Anim.reverse();
   ground2Anim.reverse();
+  infoGuyBoxAnim.reverse();
   charAnim.reverse();
 };
 
-const pause = function () {
+const pause = function (x) {
   clouds1Anim.pause();
   clouds2Anim.pause();
   background1Anim.pause();
   background2Anim.pause();
   ground1Anim.pause();
   ground2Anim.pause();
+  infoGuyBoxAnim.pause();
   charAnim.pause();
+  if (x) {
+    setTimeout(() => {
+      console.log("Delayed for 1 second.");
+    }, x);
+  }
 };
 
 const moveLeft = function () {
