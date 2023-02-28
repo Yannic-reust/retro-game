@@ -1,5 +1,5 @@
 function checkColison() {
-  var object_1 = enemieAnim.getBoundingClientRect();
+  var object_1 = infoGuyAnim.getBoundingClientRect();
   var object_2 = char.getBoundingClientRect();
   if (
     object_1.left < object_2.left + object_2.width &&

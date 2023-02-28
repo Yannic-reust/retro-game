@@ -2,13 +2,11 @@ let lastDirection = "right";
 let atStart = true;
 let atEnd = false;
 
-primary.addEventListener("animationend", () => {
-  primaryAnim.pause();
-  charAnim.pause();
-
+ground1.addEventListener("animationend", () => {
   if (lastDirection === "right") atEnd = true;
   if (lastDirection === "left") atStart = true;
 });
+
 const moveAll = function () {
   clouds1Anim.play();
   clouds2Anim.play();
@@ -16,6 +14,7 @@ const moveAll = function () {
   background2Anim.play();
   ground1Anim.play();
   ground2Anim.play();
+  charAnim.play();
 };
 
 const reverseAll = function () {
@@ -25,6 +24,7 @@ const reverseAll = function () {
   background2Anim.reverse();
   ground1Anim.reverse();
   ground2Anim.reverse();
+  charAnim.reverse();
 };
 
 const pause = function () {
@@ -34,13 +34,13 @@ const pause = function () {
   background2Anim.pause();
   ground1Anim.pause();
   ground2Anim.pause();
+  charAnim.pause();
 };
 
 const moveLeft = function () {
   checkColison();
   if (atStart) return;
   if (atEnd) atEnd = false;
-
   if (lastDirection === "left") {
     moveAll();
   } else {
@@ -51,6 +51,7 @@ const moveLeft = function () {
 
 const moveRight = function () {
   checkColison();
+
   if (atEnd) return;
   if (atStart) atStart = false;
 
@@ -66,6 +67,7 @@ const moveRight = function () {
 //=====================================
 // Tastaturabfrage
 //=====================================
+
 globalThis.addEventListener("down", onkeydown, false);
 globalThis.addEventListener("up", onkeyup, false);
 
@@ -80,5 +82,3 @@ onkeydown = onkeyup = (e) => {
   else if (keys.KeyA && keys.KeyD) pause();
   else if (!keys.KeyA && !keys.KeyD) pause();
 };
-
-pause();
