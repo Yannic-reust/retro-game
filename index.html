@@ -13,29 +13,30 @@
     <link rel="stylesheet" href="./css/animations.css" />
   </head>
   <body>
+    <div class="container">
+      <div id="character-wrapper">
+        <div id="character"></div>
+      </div>
+      <div class="scroll-parent">
+        <div class="scroll-element" id="primary">
+          <div class="flex">
+            <div id="ground"></div>
+            <div id="clouds"></div>
+            <div id="background"></div>
+            <img src="assets/enemie.gif" id="enemie" />
+          </div>
+        </div>
+        <div class="scroll-element" id="secondary">
+          <div class="flex">
+            <div id="ground"></div>
+            <div id="clouds"></div>
+            <div id="background"></div>
+          </div>
+        </div>
+      </div>
+    </div>
     <audio id="myAudio" loop autoplay>
       <source src="./sounds/happy.mp3" type="audio/mpeg" />
     </audio>
-
-    <div id="character-wrapper">
-      <div id="character"></div>
-    </div>
-    <div class="scroll-parent">
-      <div class="scroll-element" id="primary">
-        <div class="flex">
-          <div id="ground"></div>
-          <div id="clouds"></div>
-          <div id="background"></div>
-          <img src="assets/enemie.gif" id="enemie" />
-        </div>
-      </div>
-      <div class="scroll-element" id="secondary">
-        <div class="flex">
-          <div id="ground"></div>
-          <div id="clouds"></div>
-          <div id="background"></div>
-        </div>
-      </div>
-    </div>
   </body>
 </html>

@@ -4,7 +4,6 @@
   height: 100%;
   background: url("../../assets/player.png") no-repeat;
   animation: walk 0.3s steps(4) infinite;
-  scale: 0.3;
 }
 
 .jump {
@@ -13,17 +12,16 @@
 
 @keyframes walk {
   from {
-    background-position: 0 -1800px;
+    background-position: 0 -450px;
   }
   to {
-    background-position: -1601px -1800px;
+    background-position: -400.25px -450px;
   }
 }
 #enemie {
   background: url("../assets/enemie.gif") no-repeat;
   width: 100px;
   height: 100px;
-  /*background-color: red;*/
   z-index: 9998;
   position: absolute;
   bottom: 140px;

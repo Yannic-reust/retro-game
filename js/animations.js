@@ -4,6 +4,7 @@ let atEnd = false;
 
 primary.addEventListener("animationend", () => {
   primaryAnim.pause();
+  charAnim.pause();
 
   if (lastDirection === "right") atEnd = true;
   if (lastDirection === "left") atStart = true;
@@ -59,8 +60,9 @@ globalThis.addEventListener("up", onkeyup, false);
 let keys = {};
 onkeydown = onkeyup = (e) => {
   keys[e.code] = e.type == "keydown";
-
-  if (keys.KeyA && !keys.KeyD) moveLeft();
+  if (keys.KeyD && keys.KeyW) jump() && moveRight();
+  else if (keys.KeyA && keys.KeyW) jump() && moveLeft();
+  else if (keys.KeyA && !keys.KeyD) moveLeft();
   else if (keys.KeyD && !keys.KeyA) moveRight();
   else if (keys.KeyW && !keys.KeyS) jump();
   else if (keys.KeyA && keys.KeyD) pause();
