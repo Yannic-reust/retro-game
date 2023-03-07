@@ -1,6 +1,7 @@
 let lastDirection = "right";
 let atStart = true;
 let atEnd = false;
+let enableKeyboard = true;
 
 ground1.addEventListener("animationend", () => {
   if (lastDirection === "right") atEnd = true;
@@ -46,7 +47,8 @@ const pause = function (x) {
 };
 
 const moveLeft = function () {
-  checkColison();
+  checkColisonGuy();
+  colisionHole();
   if (atStart) return;
   if (atEnd) atEnd = false;
   if (lastDirection === "left") {
@@ -58,8 +60,8 @@ const moveLeft = function () {
 };
 
 const moveRight = function () {
-  checkColison();
-
+  checkColisonGuy();
+  colisionHole();
   if (atEnd) return;
   if (atStart) atStart = false;
 
@@ -81,12 +83,15 @@ globalThis.addEventListener("up", onkeyup, false);
 
 let keys = {};
 onkeydown = onkeyup = (e) => {
-  keys[e.code] = e.type == "keydown";
-  if (keys.KeyD && keys.KeyW) jump(), moveRight();
-  else if (keys.KeyA && keys.KeyW) jump(), moveLeft();
-  else if (keys.KeyA && !keys.KeyD) moveLeft();
-  else if (keys.KeyD && !keys.KeyA) moveRight();
-  else if (keys.KeyW && !keys.KeyS) jump();
-  else if (keys.KeyA && keys.KeyD) pause();
-  else if (!keys.KeyA && !keys.KeyD) pause();
+  pause();
+  if (enableKeyboard) {
+    keys[e.code] = e.type == "keydown";
+    if (keys.KeyD && keys.KeyW) jump(), moveRight();
+    else if (keys.KeyA && keys.KeyW) jump(), moveLeft();
+    else if (keys.KeyA && !keys.KeyD) moveLeft();
+    else if (keys.KeyD && !keys.KeyA) moveRight();
+    else if (keys.KeyW && !keys.KeyS) jump();
+    else if (keys.KeyA && keys.KeyD) pause();
+    else if (!keys.KeyA && !keys.KeyD) pause();
+  }
 };

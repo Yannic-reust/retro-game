@@ -1,7 +1,11 @@
+@font-face {
+  font-family: myFirstFont;
+  src: url(./fonts/ARCADECLASSIC.TTF);
+}
 * {
   margin: 0;
   padding: 0;
-  font-family: Poppins;
+  font-family: myFirstFont;
 }
 
 body {
@@ -13,7 +17,6 @@ body {
 .container {
   position: relative;
   width: 100vw;
-
   aspect-ratio: 16/9;
   position: relative;
 }
@@ -39,16 +42,17 @@ body {
   z-index: 2;
   position: absolute;
   bottom: 28px;
-  scale: 1;
+  scale: 0.769230769;
   transition: transform 0.5s;
-  z-index: 9999;
+  z-index: 9998;
+  background-color: red;
 }
 
 .infoCharacter {
   position: absolute;
   width: 300px;
   height: 100px;
-  z-index: 9998;
+  z-index: 9997;
   position: absolute;
   bottom: 140px;
   left: 300px;
@@ -62,11 +66,60 @@ body {
   border-radius: 8px;
   height: min-content;
   padding: 10px;
-  width: 60%;
+  width: 100%;
   opacity: 0;
 }
+
+.hitBoxGround {
+  height: 48px;
+  background-color: red;
+  z-index: 9999;
+  position: absolute;
+  bottom: 00px;
+}
+#hitBoxGround1 {
+  width: 20px;
+  left: 1790px;
+}
+#hitBoxGround2 {
+  width: 20px;
+  left: 2255px;
+}
+#hitBoxGround3 {
+  width: 20px;
+  left: 2365px;
+}
+#hitBoxGround4 {
+  width: 20px;
+  left: 3510px;
+}
+
 .visible {
   visibility: visible !important;
   transition: visibility 0.3s linear, opacity 0.3s linear;
   opacity: 1 !important;
+}
+#deadWrapper {
+  position: absolute;
+  visibility: hidden;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  top: 0;
+  left: 0;
+  background-color: rgb(0, 0, 0, 0.5);
+  z-index: 9999;
+}
+#deadWrapper p {
+  font-size: 200px;
+  color: white;
+}
+#deadWrapper button {
+  color: black;
+  background-color: white;
+  font-size: 48px;
+  padding: 40px;
 }

@@ -25,3 +25,14 @@ function jump() {
     }, 250);
   }
 }
+
+function nextTry() {
+  clouds1Anim.cancel();
+  clouds2Anim.cancel();
+  background1Anim.cancel();
+  background2Anim.cancel();
+  ground1Anim.cancel();
+  ground2Anim.cancel();
+  infoGuyBoxAnim.cancel();
+  charAnim.cancel();
+}

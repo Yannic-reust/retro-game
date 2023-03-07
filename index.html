@@ -23,12 +23,24 @@
       <div id="character-wrapper">
         <div id="character"></div>
       </div>
+      <div id="deadWrapper">
+        <p>You Died</p>
+        <button onclick="nextTry()">Try Again</button>
+      </div>
+
       <div class="scroll-parent">
         <div class="scroll-element">
           <div class="flex">
-            <div id="ground1" class="ground"></div>
+            <div id="ground1" class="ground">
+              <div id="hitBoxGround1" class="hitBoxGround"></div>
+              <div id="hitBoxGround2" class="hitBoxGround"></div>
+              <div id="hitBoxGround3" class="hitBoxGround"></div>
+              <div id="hitBoxGround4" class="hitBoxGround"></div>
+              <div id="hitBoxGround5" class="hitBoxGround"></div>
+            </div>
             <div id="clouds1" class="clouds"></div>
             <div id="background1" class="background"></div>
+
             <div class="infoCharacter" id="infoGuyBox">
               <img src="assets/enemie.gif" id="infoGuy" alt="roboter" />
               <p id="infoText">You can never defeat us!</p>
