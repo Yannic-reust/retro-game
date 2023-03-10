@@ -14,7 +14,16 @@ body {
   width: 100vw;
   height: 100vh;
 }
-.container {
+/* first scene */
+.first-scene {
+  position: relative;
+  width: 100vw;
+  aspect-ratio: 16/9;
+  position: relative;
+  background-color: red;
+}
+/* second scene */
+.second-scene {
   position: relative;
   width: 100vw;
   aspect-ratio: 16/9;

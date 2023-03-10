@@ -1,3 +1,7 @@
+/* first scene */
+
+/* second scene */
+
 const clouds1Anim = clouds1.getAnimations()[0];
 const clouds2Anim = clouds2.getAnimations()[0];
 const background1Anim = background1.getAnimations()[0];

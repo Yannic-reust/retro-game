@@ -1,3 +1,7 @@
+/* first scene */
+
+/* second scene */
+
 function checkColisonGuy() {
   var object_1 = infoGuyAnim.getBoundingClientRect();
   var object_2 = char.getBoundingClientRect();

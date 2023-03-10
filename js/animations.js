@@ -1,3 +1,7 @@
+/* first scene */
+
+/* second scene */
+
 let lastDirection = "right";
 let atStart = true;
 let atEnd = false;
