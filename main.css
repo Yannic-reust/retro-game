@@ -78,19 +78,19 @@ body {
   bottom: 00px;
 }
 #hitBoxGround1 {
-  width: 20px;
+  width: 18px;
   left: 1790px;
 }
 #hitBoxGround2 {
-  width: 20px;
+  width: 18px;
   left: 2255px;
 }
 #hitBoxGround3 {
-  width: 20px;
+  width: 18px;
   left: 2365px;
 }
 #hitBoxGround4 {
-  width: 20px;
+  width: 18px;
   left: 3510px;
 }
 
@@ -99,6 +99,13 @@ body {
   transition: visibility 0.3s linear, opacity 0.3s linear;
   opacity: 1 !important;
 }
+
+.hidden {
+  visibility: hidden !important;
+  transition: visibility 0.3s linear, opacity 0.3s linear;
+  opacity: 0 !important;
+}
+
 #deadWrapper {
   position: absolute;
   visibility: hidden;
@@ -106,7 +113,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100%;
   flex-direction: column;
   top: 0;
   left: 0;

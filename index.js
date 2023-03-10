@@ -21,12 +21,20 @@ function jump() {
       elem.classList.remove("jump");
       setTimeout(() => {
         jumping = false;
+        colisionHole();
       }, 250);
     }, 250);
   }
 }
 
 function nextTry() {
+  resetGame();
+  document.getElementById("deadWrapper").classList.remove("visible");
+}
+
+function resetGame() {
+  console.log("asdasd");
+  enableKeyboard = true;
   clouds1Anim.cancel();
   clouds2Anim.cancel();
   background1Anim.cancel();
