@@ -1,6 +1,22 @@
+/* general */
+const clouds1Anim = clouds1.getAnimations()[0];
+const clouds2Anim = clouds2.getAnimations()[0];
+const background1Anim = background1.getAnimations()[0];
+const background2Anim = background2.getAnimations()[0];
+const ground1Anim = ground1.getAnimations()[0];
+const ground2Anim = ground2.getAnimations()[0];
+const infoGuyBoxAnim = infoGuyBox.getAnimations()[0];
+
+const charAnim = character.getAnimations()[0];
+const char = document.getElementById("character");
+const infoGuyAnim = document.getElementById("infoGuy");
+
 /* first scene */
 
 const intro = document.getElementById("intro");
+
+document.getElementById("character-wrapper2").classList.add("walk-sc-1");
+console.log("asd");
 
 var step = 1;
 var txt = null;
@@ -10,13 +26,13 @@ function nextStep() {
     typeWriter();
     step++;
   } else if (step == 2) {
-    document.getElementById("testText").innerHTML = "";
+    document.getElementById("introText").innerHTML = "";
     txt = "They are going to destory humanity";
     i = 0;
     typeWriter();
     step++;
   } else if (step == 3) {
-    document.getElementById("testText").innerHTML = "";
+    document.getElementById("introText").innerHTML = "";
     txt = "Third Text";
     i = 0;
     typeWriter();
@@ -32,25 +48,13 @@ var i = 0;
 
 function typeWriter() {
   if (i < txt.length) {
-    document.getElementById("testText").innerHTML += txt.charAt(i);
+    document.getElementById("introText").innerHTML += txt.charAt(i);
     i++;
     setTimeout(typeWriter, speed);
   }
 }
 
 /* second scene */
-
-const clouds1Anim = clouds1.getAnimations()[0];
-const clouds2Anim = clouds2.getAnimations()[0];
-const background1Anim = background1.getAnimations()[0];
-const background2Anim = background2.getAnimations()[0];
-const ground1Anim = ground1.getAnimations()[0];
-const ground2Anim = ground2.getAnimations()[0];
-const infoGuyBoxAnim = infoGuyBox.getAnimations()[0];
-
-const charAnim = character.getAnimations()[0];
-const char = document.getElementById("character");
-const infoGuyAnim = document.getElementById("infoGuy");
 
 var jumping = false;
 

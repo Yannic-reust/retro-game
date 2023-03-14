@@ -82,17 +82,24 @@ body {
   left: 0%;
   top: 0%;
 }
-#character-wrapper {
+.character-wrapper {
   width: 100px;
   height: 150px;
-  margin-left: 50px;
   z-index: 2;
   position: absolute;
-  bottom: 28px;
   scale: 0.769230769;
   transition: transform 0.5s;
   z-index: 9998;
-  background-color: red;
+}
+
+.first-scene #character-wrapper2 {
+  bottom: 14%;
+  margin-left: 000px;
+}
+
+.second-scene #character-wrapper {
+  bottom: 28px;
+  margin-left: 50px;
 }
 
 .infoCharacter {

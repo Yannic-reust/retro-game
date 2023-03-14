@@ -7,7 +7,7 @@ let atStart = true;
 let atEnd = false;
 let enableKeyboard = true;
 
-ground1.addEventListener("animationend", () => {
+character.addEventListener("animationend", () => {
   if (lastDirection === "right") atEnd = true;
   if (lastDirection === "left") atStart = true;
 });

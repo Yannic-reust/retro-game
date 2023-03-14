@@ -38,10 +38,23 @@
   animation: infoGuy 10s linear infinite;
 }
 
+#character-wrapper2 {
+  animation: test 5s linear;
+  animation-delay: 1s;
+}
+
 .jump {
   transform: translate(0px, -200px);
 }
 
+@keyframes test {
+  from {
+    transform: 000px;
+  }
+  to {
+    background-position: 200px;
+  }
+}
 @keyframes walk {
   from {
     background-position: 0 -450px;

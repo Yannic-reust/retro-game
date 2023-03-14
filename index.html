@@ -5,80 +5,30 @@
     <title>Retro Jumper</title>
     <script defer src="./index.js"></script>
     <script defer src="./js/animations.js"></script>
-    <script defer src="./js/enemie.js"></script>
+
     <script defer src="./js/colision.js"></script>
-    <!-- <script defer src="./js/reset.js"></script> -->
-    <script defer src="./js/audio.js"></script>
+
     <link rel="stylesheet" href="main.css" />
     <link rel="stylesheet" href="./css/background.css" />
     <link rel="stylesheet" href="./css/animations.css" />
   </head>
   <body>
-    <!-- <audio id="myAudio" loop autoplay>
-      <source src="./sounds/happy.mp3" type="audio/mpeg" />
-    </audio> -->
-
-    <!---------------------- first scene --------------------------->
     <div class="first-scene">
-      <div id="intro">
+      <div id="intro" class="hidden">
         <div id="first-step">
-          <p id="testText"></p>
+          <p id="introText"></p>
         </div>
-        <div id="second-step">
-          <p>sadasd</p>
-        </div>
-        <div id="third-step">
-          <p>sadasd</p>
-        </div>
+
         <button onclick="nextStep()">next!</button>
       </div>
 
       <div id="backgroundCity"></div>
 
       <div id="sc1-ground"></div>
-      <div id="sc1-player-wrapper">
-        <div id="player"></div>
-      </div>
-    </div>
-    <!--------------------- first scene end --------------------------->
-    <!---------------------- second scene --------------------------->
-    <!-- <div class="second-scenetainer">
-      <div id="character-wrapper">
+
+      <div id="character-wrapper2" class="character-wrapper">
         <div id="character"></div>
       </div>
-      <div id="deadWrapper">
-        <p>You Died</p>
-        <button onclick="nextTry()">Try Again</button>
-      </div>
-
-      <div class="scroll-parent">
-        <div class="scroll-element">
-          <div class="flex">
-            <div id="ground1" class="ground">
-              <div id="hitBoxGround1" class="hitBoxGround"></div>
-              <div id="hitBoxGround2" class="hitBoxGround"></div>
-              <div id="hitBoxGround3" class="hitBoxGround"></div>
-              <div id="hitBoxGround4" class="hitBoxGround"></div>
-              <div id="hitBoxGround5" class="hitBoxGround"></div>
-            </div>
-            <div id="clouds1" class="clouds"></div>
-            <div id="background1" class="background"></div>
-
-            <div class="infoCharacter" id="infoGuyBox">
-              <img src="assets/enemie.gif" id="infoGuy" alt="roboter" />
-              <p id="infoText">You can never defeat us!</p>
-            </div>
-          </div>
-        </div>
-        <div class="scroll-element">
-          <div class="flex">
-            <div id="ground2" class="ground"></div>
-            <div id="clouds2" class="clouds"></div>
-            <div id="background2" class="background"></div>
-          </div>
-        </div>
-      </div>
-    </div> -->
-    <!---------------------- first second end --------------------------->
+    </div>
   </body>
 </html>
