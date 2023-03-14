@@ -1,22 +1,29 @@
 /* general */
-const clouds1Anim = clouds1.getAnimations()[0];
-const clouds2Anim = clouds2.getAnimations()[0];
-const background1Anim = background1.getAnimations()[0];
-const background2Anim = background2.getAnimations()[0];
-const ground1Anim = ground1.getAnimations()[0];
-const ground2Anim = ground2.getAnimations()[0];
-const infoGuyBoxAnim = infoGuyBox.getAnimations()[0];
 
-const charAnim = character.getAnimations()[0];
 const char = document.getElementById("character");
-const infoGuyAnim = document.getElementById("infoGuy");
 
 /* first scene */
 
 const intro = document.getElementById("intro");
 
-document.getElementById("character-wrapper2").classList.add("walk-sc-1");
-console.log("asd");
+triggerAnimations();
+
+function triggerAnimations() {
+  //character start walk
+  document
+    .getElementById("character-wrapper-1")
+    .classList.add("first-animation-character");
+  setTimeout(() => {
+    document.getElementById("character-sc1").classList.add("character-sc1");
+  }, 1000);
+
+  //character turn
+  setTimeout(() => {
+    document.getElementById("character-sc1").classList.remove("character-sc1");
+    document.getElementById("character-sc1").classList.add("character-turn");
+    console.log("second animation");
+  }, 4000);
+}
 
 var step = 1;
 var txt = null;
@@ -61,7 +68,7 @@ var jumping = false;
 function jump() {
   if (!jumping) {
     jumping = true;
-    var elem = document.getElementById("character-wrapper");
+    var elem = document.getElementById("character-wrapper-2");
     elem.classList.add("jump");
     setTimeout(() => {
       elem.classList.remove("jump");

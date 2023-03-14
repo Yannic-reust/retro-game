@@ -52,14 +52,7 @@ body {
 #first-step p {
   font-size: 4rem;
 }
-#second-step {
-  opacity: 0;
-  visibility: hidden;
-}
-#third-step {
-  opacity: 0;
-  visibility: hidden;
-}
+
 /* second scene */
 .second-scene {
   position: relative;
@@ -92,12 +85,12 @@ body {
   z-index: 9998;
 }
 
-.first-scene #character-wrapper2 {
+.first-scene #character-wrapper-1 {
   bottom: 14%;
   margin-left: 000px;
 }
 
-.second-scene #character-wrapper {
+.second-scene #character-wrapper-2 {
   bottom: 28px;
   margin-left: 50px;
 }
