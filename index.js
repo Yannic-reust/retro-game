@@ -1,5 +1,43 @@
 /* first scene */
 
+const intro = document.getElementById("intro");
+
+var step = 1;
+var txt = null;
+function nextStep() {
+  if (step == 1) {
+    txt = "The World has been tacken over by the Robots";
+    typeWriter();
+    step++;
+  } else if (step == 2) {
+    document.getElementById("testText").innerHTML = "";
+    txt = "They are going to destory humanity";
+    i = 0;
+    typeWriter();
+    step++;
+  } else if (step == 3) {
+    document.getElementById("testText").innerHTML = "";
+    txt = "Third Text";
+    i = 0;
+    typeWriter();
+    step++;
+  } else {
+    intro.classList.add("hidden");
+    //To Do --> trigger walk out
+  }
+}
+
+var speed = 50;
+var i = 0;
+
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("testText").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+
 /* second scene */
 
 const clouds1Anim = clouds1.getAnimations()[0];
@@ -37,7 +75,6 @@ function nextTry() {
 }
 
 function resetGame() {
-  console.log("asdasd");
   enableKeyboard = true;
   clouds1Anim.cancel();
   clouds2Anim.cancel();

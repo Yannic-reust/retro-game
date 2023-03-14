@@ -7,7 +7,7 @@
     <script defer src="./js/animations.js"></script>
     <script defer src="./js/enemie.js"></script>
     <script defer src="./js/colision.js"></script>
-    <script defer src="./js/reset.js"></script>
+    <!-- <script defer src="./js/reset.js"></script> -->
     <script defer src="./js/audio.js"></script>
     <link rel="stylesheet" href="main.css" />
     <link rel="stylesheet" href="./css/background.css" />
@@ -20,17 +20,21 @@
 
     <!---------------------- first scene --------------------------->
     <div class="first-scene">
-      <div id="first-step">
-        <p>asdasdsad</p>
+      <div id="intro">
+        <div id="first-step">
+          <p id="testText"></p>
+        </div>
+        <div id="second-step">
+          <p>sadasd</p>
+        </div>
+        <div id="third-step">
+          <p>sadasd</p>
+        </div>
+        <button onclick="nextStep()">next!</button>
       </div>
-      <div id="second-step">
-        <p>sadasd</p>
-      </div>
-      <div id="third-step">
-        <p>sadasd</p>
-      </div>
+
       <div id="backgroundCity"></div>
-      <!-- <div id="fence"></div> -->
+
       <div id="sc1-ground"></div>
       <div id="sc1-player-wrapper">
         <div id="player"></div>
