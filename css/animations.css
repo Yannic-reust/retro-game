@@ -7,7 +7,7 @@
 }
 .second-animation-character {
   animation: walkOutFrame 3s linear;
-  animation-delay: 1s;
+ 
   animation-fill-mode: forwards;
 }
 .character-turn {
@@ -40,7 +40,7 @@
 }
 @keyframes walkOutFrame {
   from {
-    transform: translateX(0);
+    transform: translateX(60vw);
   }
   to {
     transform: translateX(140vw);
@@ -56,42 +56,44 @@
   }
 }
 
+
 @keyframes enemieLeft {
   0% {
     transform: translate(0, 0) scale(-1, 1);
   }
   33% {
-    transform: translate(600px, -500px) scale(-1, 1);
+    transform: translate(30vw, -20vw) scale(-1, 1);
   }
   66% {
-    transform: translate(700px, -100px) scale(-1, 1);
+    transform: translate(35vw, -0vw) scale(-1, 1);
   }
   67% {
-    transform: translate(700px, -100px) scale(1, 1);
+    transform: translate(35vw, -0vw) scale(1, 1);
   }
   100% {
-    transform: translate(00px, -300px) scale(1, 1);
+    transform: translate(00px, 0) scale(1, 1);
   }
 }
 @keyframes enemieRight {
-  /* change positions */
+
   0% {
     transform: translate(0, 0);
   }
   25% {
-    transform: translate(600px, -500px);
+    transform: translate(-40vw, 10vw) ;
+  }
+  25.1% {
+    transform: translate(-40vw, 10vw) scale(-1, 1);
   }
   50% {
-    transform: translate(700px, -100px);
+    transform: translate(-10vw, 20vw) scale(-1, 1);
   }
   75% {
-    transform: translate(700px, -100px);
+    transform: translate(-10vw, 0vw) scale(-1, 1);
   }
-  75.1% {
-    transform: translate(700px, -100px) scale(-1, 1);
-  }
+ 
   100% {
-    transform: translate(00px, -300px) scale(-1, 1);
+    transform: translate(20vw, 0vw) scale(-1, 1);
   }
 }
 

@@ -21,8 +21,7 @@ function triggerAnimations() {
   setTimeout(() => {
     document.getElementById("character-sc1").classList.remove("character-sc1");
     document.getElementById("character-sc1").classList.add("character-turn");
-    var i = 0;
-    speed = 50;
+    document.getElementById("character-text-wrapper").classList.add("visible");
     txt = "The City looks realy good at night";
     textCharacter();
   }, 4000);
@@ -30,6 +29,8 @@ function triggerAnimations() {
     //enemie fly in
     document.getElementById("roboter1").classList.add("enemie-left");
     document.getElementById("roboter2").classList.add("enemie-right");
+    document.getElementById("character-text-wrapper").classList.remove("visible");
+    
     setTimeout(() => {
       console.log("explosion");
     }, 1250);
@@ -40,10 +41,13 @@ function triggerAnimations() {
   }, 8000);
 
   setTimeout(() => {
-    //popup explain text -> implement
-  }, 16000);
 
-  //character walk out -> todo
+    document.getElementById("intro").classList.add("visible")
+    
+    nextStep()
+   
+  }, 12000);
+
 }
 var j = 0;
 function textCharacter() {
@@ -58,24 +62,28 @@ var step = 1;
 
 function nextStep() {
   if (step == 1) {
-    txt = "The World has been tacken over by the Robots";
+    txt = "The World has been taken over by the Robots";
     typeWriter();
     step++;
   } else if (step == 2) {
     document.getElementById("introText").innerHTML = "";
-    txt = "They are going to destory humanity";
+    txt = "They are going to destroy humanity";
     i = 0;
     typeWriter();
 
     step++;
   } else if (step == 3) {
     document.getElementById("introText").innerHTML = "";
-    txt = "Third Text";
+    txt = "You need to do something about it, but look out it is dangerous ";
     i = 0;
     typeWriter();
     step++;
   } else {
     intro.classList.add("hidden");
+    document.getElementById("character-wrapper-1").classList.add("second-animation-character");
+    document.getElementById("character-sc1").classList.remove("character-turn");
+    document.getElementById("character-sc1").classList.add("character-sc1");
+    
   }
 }
 

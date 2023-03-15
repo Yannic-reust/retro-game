@@ -13,6 +13,7 @@ body {
   align-items: center;
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 }
 /* first scene */
 .first-scene {
@@ -20,11 +21,13 @@ body {
   width: 100vw;
   aspect-ratio: 16/9;
   position: relative;
+  overflow: hidden;
 }
 #intro {
   width: 50%;
   height: 200px;
   background-color: white;
+  padding: 2rem;
   z-index: 9999;
   position: absolute;
   top: 0;
@@ -36,7 +39,9 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
-  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+
 }
 #intro button {
   background-color: black;
@@ -44,18 +49,22 @@ body {
   border: transparent;
   padding: 1rem 2rem;
   width: 8rem;
+  margin-top: 2rem;
 }
 #character-text-wrapper {
   background-color: white;
   position: absolute;
   bottom: 27.5%;
-  left: 52.5%;
+  left: calc(50vw - 100px);
   z-index: 9999;
   padding: 1rem 2rem;
+  opacity: 0;
+  visibility: hidden;
 }
 #character-text-wrapper p {
   font: 4rem;
   text-align: center;
+  
 }
 
 #first-step {
@@ -81,10 +90,13 @@ body {
   transform: scale(-1, 1);
 }
 #roboter2 {
-  right: 500px;
+  right: -200px;
   top: 200px;
 }
-
+.first-scene #character-wrapper-1 {
+  bottom: 14%;
+  margin-left: -100px;
+}
 /* second scene */
 .second-scene {
   position: relative;
@@ -117,10 +129,7 @@ body {
   z-index: 9998;
 }
 
-.first-scene #character-wrapper-1 {
-  bottom: 14%;
-  margin-left: 000px;
-}
+
 
 .second-scene #character-wrapper-2 {
   bottom: 28px;
