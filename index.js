@@ -1,7 +1,7 @@
 /* general */
 
 const char = document.getElementById("character");
-
+var speed = 50;
 /* first scene */
 
 const intro = document.getElementById("intro");
@@ -21,12 +21,27 @@ function triggerAnimations() {
   setTimeout(() => {
     document.getElementById("character-sc1").classList.remove("character-sc1");
     document.getElementById("character-sc1").classList.add("character-turn");
-    console.log("second animation");
+    var i = 0;
+    speed = 50;
+    txt = "Bla bla bla";
+    textCharacter();
   }, 4000);
+  // roboter fly in -> todo
+  //city explosions -> todo
+  //popup explain text -> implement
+  //character walk out -> todo
+}
+var j = 0;
+function textCharacter() {
+  if (j < txt.length) {
+    document.getElementById("character-text").innerHTML += txt.charAt(j);
+    j++;
+    setTimeout(textCharacter, speed);
+  }
 }
 
 var step = 1;
-var txt = null;
+
 function nextStep() {
   if (step == 1) {
     txt = "The World has been tacken over by the Robots";
@@ -37,6 +52,7 @@ function nextStep() {
     txt = "They are going to destory humanity";
     i = 0;
     typeWriter();
+
     step++;
   } else if (step == 3) {
     document.getElementById("introText").innerHTML = "";
@@ -46,11 +62,9 @@ function nextStep() {
     step++;
   } else {
     intro.classList.add("hidden");
-    //To Do --> trigger walk out
   }
 }
 
-var speed = 50;
 var i = 0;
 
 function typeWriter() {

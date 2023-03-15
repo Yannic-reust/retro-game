@@ -11,8 +11,8 @@
   animation-fill-mode: forwards;
 }
 .character-turn {
-  animation: turnCharacter 5s linear;
-  animation-fill-mode: forwards;
+  animation: turnCharacter 0.000001s linear;
+  animation-fill-mode: both;
 }
 
 @keyframes walkInFrame {
@@ -28,7 +28,7 @@
     background-position: 0 -450px;
   }
   to {
-    background-position: -800.5px -900px;
+    background-position: 0px -150px;
   }
 }
 @keyframes walkOutFrame {

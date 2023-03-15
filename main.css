@@ -44,6 +44,18 @@ body {
   padding: 1rem 2rem;
   width: 8rem;
 }
+#character-text-wrapper {
+  background-color: white;
+  position: absolute;
+  bottom: 27.5%;
+  left: 52.5%;
+  z-index: 9999;
+  padding: 1rem 2rem;
+}
+#character-text-wrapper p {
+  font: 4rem;
+  text-align: center;
+}
 
 #first-step {
   opacity: 1;
@@ -51,6 +63,7 @@ body {
 }
 #first-step p {
   font-size: 4rem;
+  text-align: center;
 }
 
 /* second scene */
