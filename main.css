@@ -36,6 +36,7 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
+  overflow: hidden;
 }
 #intro button {
   background-color: black;
@@ -64,6 +65,24 @@ body {
 #first-step p {
   font-size: 4rem;
   text-align: center;
+}
+.roboter {
+  background: url("../../assets/level1/enemie.gif") no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  z-index: 9999;
+  width: 200px;
+  height: 200px;
+}
+#roboter1 {
+  left: -200px;
+  bottom: 400px;
+  transform: scale(-1, 1);
+}
+#roboter2 {
+  right: 500px;
+  top: 200px;
 }
 
 /* second scene */
@@ -132,7 +151,6 @@ body {
 
 .hitBoxGround {
   height: 48px;
-  background-color: red;
   z-index: 9999;
   position: absolute;
   bottom: 00px;

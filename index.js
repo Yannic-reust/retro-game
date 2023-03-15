@@ -23,12 +23,26 @@ function triggerAnimations() {
     document.getElementById("character-sc1").classList.add("character-turn");
     var i = 0;
     speed = 50;
-    txt = "Bla bla bla";
+    txt = "The City looks realy good at night";
     textCharacter();
   }, 4000);
-  // roboter fly in -> todo
-  //city explosions -> todo
-  //popup explain text -> implement
+  setTimeout(() => {
+    //enemie fly in
+    document.getElementById("roboter1").classList.add("enemie-left");
+    document.getElementById("roboter2").classList.add("enemie-right");
+    setTimeout(() => {
+      console.log("explosion");
+    }, 1250);
+
+    setTimeout(() => {
+      console.log("explosion");
+    }, 2600);
+  }, 8000);
+
+  setTimeout(() => {
+    //popup explain text -> implement
+  }, 16000);
+
   //character walk out -> todo
 }
 var j = 0;
