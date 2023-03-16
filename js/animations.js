@@ -1,11 +1,11 @@
-const charAnim = character.getAnimations()[0];
+const charAnim = charactersc2.getAnimations()[0];
 
 let lastDirection = "right";
 let atStart = true;
 let atEnd = false;
 let enableKeyboard = true;
 
-character.addEventListener("animationend", () => {
+charactersc2.addEventListener("animationend", () => {
   if (lastDirection === "right") atEnd = true;
   if (lastDirection === "left") atStart = true;
 });
@@ -40,7 +40,6 @@ const pause = function () {
   ground1Anim.pause();
   ground2Anim.pause();
   infoGuyBoxAnim.pause();
-  charAnim.pause();
 };
 
 const moveLeft = function () {
@@ -92,3 +91,9 @@ onkeydown = onkeyup = (e) => {
     else if (!keys.KeyA && !keys.KeyD) pause();
   }
 };
+
+myFunc();
+function myFunc() {
+  myFunc = function () {};
+  pause();
+}

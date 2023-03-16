@@ -2,9 +2,11 @@
 
 /* second scene */
 
+const char2 = document.getElementById("charactersc2");
+
 function checkColisonGuy() {
   var object_1 = infoGuyAnim.getBoundingClientRect();
-  var object_2 = char.getBoundingClientRect();
+  var object_2 = char2.getBoundingClientRect();
   if (
     object_1.left < object_2.left + object_2.width &&
     object_1.left + object_1.width > object_2.left &&
@@ -24,7 +26,7 @@ const box3 = document.getElementById("hitBoxGround3");
 const box4 = document.getElementById("hitBoxGround4");
 
 function colisionHole() {
-  var object_1 = char.getBoundingClientRect();
+  var object_1 = char2.getBoundingClientRect();
 
   var object_2 = box1.getBoundingClientRect();
   var object_3 = box2.getBoundingClientRect();
