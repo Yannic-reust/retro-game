@@ -22,6 +22,13 @@
   animation: enemieRight 4s linear;
   animation-fill-mode: both;
 }
+.darken{
+  animation: fadeOut 3s;
+}
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
 @keyframes walkInFrame {
   from {
     transform: translateX(0);

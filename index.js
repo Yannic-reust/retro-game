@@ -29,25 +29,31 @@ function triggerAnimations() {
     //enemie fly in
     document.getElementById("roboter1").classList.add("enemie-left");
     document.getElementById("roboter2").classList.add("enemie-right");
-    document.getElementById("character-text-wrapper").classList.remove("visible");
-    
+    document
+      .getElementById("character-text-wrapper")
+      .classList.remove("visible");
+    //first robot explosions
     setTimeout(() => {
-      console.log("explosion");
+      document.getElementById("explosion1").classList.add("visible");
+      setTimeout(() => {
+        document.getElementById("explosion1").classList.remove("visible");
+      }, 750);
     }, 1250);
 
     setTimeout(() => {
-      console.log("explosion");
+      document.getElementById("explosion2").classList.add("visible");
+      setTimeout(() => {
+        document.getElementById("explosion2").classList.remove("visible");
+      }, 750);
     }, 2600);
+    //second robot explosions
   }, 8000);
 
   setTimeout(() => {
+    document.getElementById("intro").classList.add("visible");
 
-    document.getElementById("intro").classList.add("visible")
-    
-    nextStep()
-   
-  }, 12000);
-
+    nextStep();
+  }, 13000);
 }
 var j = 0;
 function textCharacter() {
@@ -80,10 +86,17 @@ function nextStep() {
     step++;
   } else {
     intro.classList.add("hidden");
-    document.getElementById("character-wrapper-1").classList.add("second-animation-character");
+    document
+      .getElementById("character-wrapper-1")
+      .classList.add("second-animation-character");
     document.getElementById("character-sc1").classList.remove("character-turn");
     document.getElementById("character-sc1").classList.add("character-sc1");
-    
+    setTimeout(() => {
+      document.getElementById("fs").classList.add("darken");
+      setTimeout(() => {
+        location.href = "level2.html";
+      }, 3000);
+    }, 4000);
   }
 }
 

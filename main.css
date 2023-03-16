@@ -14,6 +14,7 @@ body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  background-color:black;
 }
 /* first scene */
 .first-scene {
@@ -25,7 +26,7 @@ body {
 }
 #intro {
   width: 50%;
-  height: 200px;
+  height: 30%;
   background-color: white;
   padding: 2rem;
   z-index: 9999;
@@ -39,10 +40,12 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
+  justify-content: center;
   opacity: 0;
   visibility: hidden;
 
 }
+
 #intro button {
   background-color: black;
   color: white;
@@ -97,6 +100,38 @@ body {
   bottom: 14%;
   margin-left: -100px;
 }
+.explosion{
+  background: url("../../assets/level1/explosion.gif") no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  z-index: 9999;
+  width: 200px;
+  height: 200px;
+  opacity: 0;
+}
+#explosion1{
+  left:20vw;
+  top:10vw;
+}
+#explosion2{
+  left:27.5vw;
+  top:27.5vw;
+}
+#explosion3{
+  right: 30vw;
+  top:20vw;
+}
+#explosion4{
+  right: 3vw;
+  top:30vw;
+}
+#explosion5{
+  right: 1vw;
+  top:10vw;
+}
+
+
 /* second scene */
 .second-scene {
   position: relative;
