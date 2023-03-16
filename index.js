@@ -37,7 +37,7 @@ function triggerAnimations() {
       document.getElementById("explosion1").classList.add("visible");
       setTimeout(() => {
         document.getElementById("explosion1").classList.remove("visible");
-      }, 750);
+      }, 1000);
     }, 1250);
 
     setTimeout(() => {
@@ -47,6 +47,25 @@ function triggerAnimations() {
       }, 750);
     }, 2600);
     //second robot explosions
+    setTimeout(() => {
+      document.getElementById("explosion3").classList.add("visible");
+      setTimeout(() => {
+        document.getElementById("explosion3").classList.remove("visible");
+      }, 750);
+    }, 850);
+
+    setTimeout(() => {
+      document.getElementById("explosion4").classList.add("visible");
+      setTimeout(() => {
+        document.getElementById("explosion4").classList.remove("visible");
+      }, 750);
+    }, 2000);
+    setTimeout(() => {
+      document.getElementById("explosion5").classList.add("visible");
+      setTimeout(() => {
+        document.getElementById("explosion5").classList.remove("visible");
+      }, 1000);
+    }, 2800);
   }, 8000);
 
   setTimeout(() => {
