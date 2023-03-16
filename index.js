@@ -128,39 +128,3 @@ function typeWriter() {
     setTimeout(typeWriter, speed);
   }
 }
-
-/* second scene */
-
-var jumping = false;
-
-function jump() {
-  if (!jumping) {
-    jumping = true;
-    var elem = document.getElementById("character-wrapper-2");
-    elem.classList.add("jump");
-    setTimeout(() => {
-      elem.classList.remove("jump");
-      setTimeout(() => {
-        jumping = false;
-        colisionHole();
-      }, 250);
-    }, 250);
-  }
-}
-
-function nextTry() {
-  resetGame();
-  document.getElementById("deadWrapper").classList.remove("visible");
-}
-
-function resetGame() {
-  enableKeyboard = true;
-  clouds1Anim.cancel();
-  clouds2Anim.cancel();
-  background1Anim.cancel();
-  background2Anim.cancel();
-  ground1Anim.cancel();
-  ground2Anim.cancel();
-  infoGuyBoxAnim.cancel();
-  charAnim.cancel();
-}

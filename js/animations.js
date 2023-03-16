@@ -1,6 +1,4 @@
-/* first scene */
-
-/* second scene */
+const charAnim = character.getAnimations()[0];
 
 let lastDirection = "right";
 let atStart = true;
@@ -34,7 +32,7 @@ const reverseAll = function () {
   charAnim.reverse();
 };
 
-const pause = function (x) {
+const pause = function () {
   clouds1Anim.pause();
   clouds2Anim.pause();
   background1Anim.pause();
@@ -43,11 +41,6 @@ const pause = function (x) {
   ground2Anim.pause();
   infoGuyBoxAnim.pause();
   charAnim.pause();
-  if (x) {
-    setTimeout(() => {
-      console.log("Delayed for 1 second.");
-    }, x);
-  }
 };
 
 const moveLeft = function () {
