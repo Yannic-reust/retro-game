@@ -110,6 +110,7 @@ body {
 }
 #explosion1 {
   left: 20vw;
+ 
   top: 10vw;
 }
 #explosion2 {
@@ -140,21 +141,24 @@ body {
 .enemieGround {
   position: absolute;
   z-index: 9999;
-  background-color: red;
   width: 100px;
   height: 100px;
+  background: url("../../assets/level2/enemie.gif") no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 #enemieGround1 {
-  bottom: 200px;
+  bottom: 35px;
   left: 0;
 }
 #enemieGround2 {
-  bottom: 400px;
-  left: 0;
+  bottom: 35px;
+  left: 800px
+  ;
 }
 #enemieGround3 {
-  bottom: 600px;
-  left: 0;
+  bottom: 35px;
+  left: 500px;
 }
 
 .scroll-parent {
