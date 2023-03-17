@@ -40,6 +40,7 @@ const pause = function () {
   ground1Anim.pause();
   ground2Anim.pause();
   infoGuyBoxAnim.pause();
+  charAnim.pause();
 };
 
 const moveLeft = function () {

@@ -22,7 +22,6 @@ function checkColisonGuy() {
 
 const box1 = document.getElementById("hitBoxGround1");
 const box2 = document.getElementById("hitBoxGround2");
-const box3 = document.getElementById("hitBoxGround3");
 const box4 = document.getElementById("hitBoxGround4");
 
 function colisionHole() {
@@ -30,7 +29,7 @@ function colisionHole() {
 
   var object_2 = box1.getBoundingClientRect();
   var object_3 = box2.getBoundingClientRect();
-  var object_4 = box3.getBoundingClientRect();
+
   var object_5 = box4.getBoundingClientRect();
 
   if (
@@ -53,16 +52,7 @@ function colisionHole() {
     enableKeyboard = false;
     pause();
   }
-  if (
-    object_1.left < object_4.left + object_4.width &&
-    object_1.left + object_1.width > object_4.left &&
-    object_1.top < object_4.top + object_4.height &&
-    object_1.top + object_1.height > object_4.top
-  ) {
-    document.getElementById("deadWrapper").classList.add("visible");
-    enableKeyboard = false;
-    pause();
-  }
+
   if (
     object_1.left < object_5.left + object_5.width &&
     object_1.left + object_1.width > object_5.left &&

@@ -7,7 +7,7 @@
 }
 .second-animation-character {
   animation: walkOutFrame 3s linear;
- 
+
   animation-fill-mode: forwards;
 }
 .character-turn {
@@ -22,12 +22,16 @@
   animation: enemieRight 4s linear;
   animation-fill-mode: both;
 }
-.darken{
+.darken {
   animation: fadeOut 3s;
 }
 @keyframes fadeOut {
-  0% { opacity: 1; }
-  100% { opacity: 0; }
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 @keyframes walkInFrame {
   from {
@@ -63,7 +67,6 @@
   }
 }
 
-
 @keyframes enemieLeft {
   0% {
     transform: translate(0, 0) scale(-1, 1);
@@ -82,12 +85,11 @@
   }
 }
 @keyframes enemieRight {
-
   0% {
     transform: translate(0, 0);
   }
   25% {
-    transform: translate(-40vw, 10vw) ;
+    transform: translate(-40vw, 10vw);
   }
   25.1% {
     transform: translate(-40vw, 10vw) scale(-1, 1);
@@ -98,7 +100,7 @@
   75% {
     transform: translate(-10vw, 0vw) scale(-1, 1);
   }
- 
+
   100% {
     transform: translate(20vw, 0vw) scale(-1, 1);
   }
@@ -116,7 +118,7 @@
 .character-sc1 {
   animation: walk 0.3s steps(4) infinite;
 }
-#character-sc2 {
+#charactersc2 {
   animation: walk 0.3s steps(4) infinite;
 }
 #infoGuy {
