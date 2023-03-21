@@ -45,7 +45,7 @@ const pause = function () {
 
 const moveLeft = function () {
   checkColisonGuy();
-  colisionHole();
+  collisionHole();
   if (atStart) return;
   if (atEnd) atEnd = false;
   if (lastDirection === "left") {
@@ -58,7 +58,7 @@ const moveLeft = function () {
 
 const moveRight = function () {
   checkColisonGuy();
-  colisionHole();
+  collisionHole();
   if (atEnd) return;
   if (atStart) atStart = false;
 

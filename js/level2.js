@@ -20,7 +20,7 @@ function jump() {
       elem.classList.remove("jump");
       setTimeout(() => {
         jumping = false;
-        colisionHole();
+        collisionHole();
       }, 250);
     }, 250);
   }

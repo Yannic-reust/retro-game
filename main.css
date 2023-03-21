@@ -141,15 +141,17 @@ body {
 .enemieGround {
   position: absolute;
   z-index: 9999;
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 80px;
   background: url("../../assets/level2/enemie.gif") no-repeat;
   background-position: center;
   background-size: cover;
 }
 #enemieGround1 {
   bottom: 35px;
-  left: 0;
+  left: 10px;
+  background-color: red;
+
 }
 #enemieGround2 {
   bottom: 35px;
