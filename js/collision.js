@@ -72,9 +72,6 @@ function collisionHole() {
     enableKeyboard = false;
     pause();
   }
-
-
-
   if (new collisionClass(object_1, object_5).checkCollision()) {
     document.getElementById("deadWrapper").classList.add("visible");
     enableKeyboard = false;

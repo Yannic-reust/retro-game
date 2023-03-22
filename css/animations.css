@@ -139,17 +139,17 @@
   animation: secondary 30s linear infinite;
 }
 #ground1 {
-  animation: primary 10s linear infinite;
+  animation: primary 8s linear infinite;
 }
 #ground2 {
-  animation: secondary 10s linear infinite;
+  animation: secondary 8s linear infinite;
 }
 #infoGuyBox {
   animation: infoGuy 10s linear infinite;
 }
 
 .jump {
-  transform: translate(0px, -200px);
+  transform: translate(0px, -250px);
 }
 
 @keyframes walk {

@@ -29,6 +29,9 @@ function jump() {
 function nextTry() {
   resetGame();
   document.getElementById("deadWrapper").classList.remove("visible");
+  showScore = 0;
+  score = 0;
+  document.getElementById("scoreText").innerHTML = showScore;
 }
 
 function resetGame() {
@@ -41,4 +44,8 @@ function resetGame() {
   ground2Anim.cancel();
   infoGuyBoxAnim.cancel();
   charAnim.cancel();
+}
+
+function nextLevel(){
+  location.href = "finale.html";
 }

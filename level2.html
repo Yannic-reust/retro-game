@@ -20,7 +20,11 @@
         <p>You Died</p>
         <button onclick="nextTry()">Try Again</button>
       </div>
-
+      <div id="levelDone">
+        <p>You made it to the boss...</p>
+        <button onclick="nextLevel()">Fight</button>
+      </div>
+      <p id="scoreText">0</p>
       <div class="scroll-parent">
         <div class="scroll-element">
           <div class="flex">
@@ -29,10 +33,10 @@
               <div id="hitBoxGround2" class="hitBoxGround"></div>
               <div id="hitBoxGround4" class="hitBoxGround"></div>
               <div id="hitBoxGround5" class="hitBoxGround"></div>
+              <div id="enemieGround1" class="enemieGround"></div>
+              <div id="enemieGround2" class="enemieGround"></div>
+              <div id="enemieGround3" class="enemieGround"></div>
             </div>
-            <div id="enemieGround1" class="enemieGround"></div>
-            <div id="enemieGround2" class="enemieGround"></div>
-            <div id="enemieGround3" class="enemieGround"></div>
 
             <div id="clouds1" class="clouds"></div>
             <div id="background1" class="background"></div>
