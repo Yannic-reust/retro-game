@@ -303,3 +303,49 @@ body {
   font-size: 48px;
   padding: 40px;
 }
+
+#sceneFinal{
+  aspect-ratio: 16/9;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+}
+#sceneFinal #groundFinal{
+  height: 368px;
+  position: absolute;
+  bottom: 0px;
+  left:0px;
+  width: 100%;
+  z-index: 80;
+  background-image: url("assets/level3/ground.png");
+  overflow-x: hidden;
+}
+#sceneFinal #enemieFinal{
+  height: 368px;
+  position: absolute;
+  bottom: 48px;
+  right:100px;
+  width: 517.44px;
+  z-index: 80;
+  background-image: url("assets/level3/finalBoss.png");
+
+}
+#sceneFinal #backgroundFinal{
+  height: 100%;
+  position: absolute;
+  bottom: 0px;
+  right:0px;
+  width: 100%;
+  z-index: 20;
+  background-image: url("assets/level3/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+#sceneFinal #character-wrapper-3{
+  
+  bottom: 32px;
+  left:0px;
+ 
+
+}
