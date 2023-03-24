@@ -121,6 +121,7 @@
 #charactersc2 {
   animation: walk 0.3s steps(4) infinite;
 }
+
 #infoGuy {
   height: 100%;
 }
@@ -185,5 +186,33 @@
   }
   to {
     left: 0px;
+  }
+}
+
+/* scene final */
+
+.walkRight3 {
+  animation: walkRight3 0.3s steps(4) infinite;
+}
+
+.walkLeft3 {
+  animation: walkLeft3 0.3s steps(4) infinite;
+}
+
+@keyframes walkRight3 {
+  from {
+    background-position: 0 -450px;
+  }
+  to {
+    background-position: -400.25px -450px;
+  }
+}
+
+@keyframes walkLeft3 {
+  from {
+    background-position: 0 -250px;
+  }
+  to {
+    background-position: -400.25px -250px;
   }
 }

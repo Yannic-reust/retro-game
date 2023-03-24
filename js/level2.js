@@ -50,6 +50,18 @@ function nextLevel() {
   location.href = "final.html";
 }
 
+function jumpRight() {
+  scoreIncrease(10)
+  scoreIncrease();
+  moveRight()
+  jump();
+}
+function jumpLeft() {
+  scoreDecrease(10);
+ moveLeft() 
+ jump();
+}
+
 //=====================================
 // Tastaturabfrage
 //=====================================
@@ -62,8 +74,8 @@ onkeydown = onkeyup = (e) => {
   pause();
   if (enableKeyboard) {
     keys[e.code] = e.type == "keydown";
-    if (keys.KeyD && keys.KeyW) jump(), moveRight();
-    else if (keys.KeyA && keys.KeyW) jump(), moveLeft();
+    if (keys.KeyD && keys.KeyW) jumpRight();
+    else if (keys.KeyA && keys.KeyW) jumpLeft();
     else if (keys.KeyA && !keys.KeyD) moveLeft();
     else if (keys.KeyD && !keys.KeyA) moveRight();
     else if (keys.KeyW && !keys.KeyS) jump();
@@ -90,7 +102,6 @@ charactersc2.addEventListener("animationend", () => {
 const moveAll = function () {
   clouds1Anim.play();
   clouds2Anim.play();
-
   background1Anim.play();
   background2Anim.play();
   ground1Anim.play();
@@ -127,3 +138,33 @@ function myFunc() {
   myFunc = function () {};
   pause();
 }
+
+
+const moveLeft = function () {
+  scoreDecrease(1);
+  checkColisonGuy();
+  collisionHole();
+  if (atStart) return;
+  if (atEnd) atEnd = false;
+  if (lastDirection === "left") {
+    moveAll();
+  } else {
+    reverseAll();
+  }
+  lastDirection = "left";
+};
+
+const moveRight = function () {
+  scoreIncrease(1);
+  checkColisonGuy();
+  collisionHole();
+  if (atEnd) return;
+  if (atStart) atStart = false;
+
+  if (lastDirection === "right") {
+    moveAll();
+  } else {
+    reverseAll();
+  }
+  lastDirection = "right";
+};
