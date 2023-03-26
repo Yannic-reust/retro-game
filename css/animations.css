@@ -121,6 +121,9 @@
 #charactersc2 {
   animation: walk 0.3s steps(4) infinite;
 }
+#charactersc3 {
+  animation: walk 0.3s steps(4) infinite;
+}
 
 #infoGuy {
   height: 100%;

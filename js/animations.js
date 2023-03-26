@@ -14,7 +14,7 @@ function scoreIncrease (e) {
     enableKeyboard = false;
     pause();
   }
-  console.log()
+
 };
 function scoreDecrease  (e) {
   score - e;

@@ -7,7 +7,6 @@ globalThis.addEventListener("up", onkeyup, false);
 
 let keys = {};
 onkeydown = onkeyup = (e) => {
- pause()
   if (enableKeyboard) {
     keys[e.code] = e.type == "keydown";
     if (keys.KeyD && keys.KeyW) jumpRight3();
@@ -48,26 +47,61 @@ const pause = function () {
 };
 
 function jumpRight3() {
-
-
-  moveRight();
+  moveRight3();
   jump();
 }
 function jumpLeft3() {
-
-  moveLeft();
+  moveLeft3();
   jump();
 }
 
+var jumping = false;
+
+function jump() {
+  if (!jumping) {
+    jumping = true;
+    var elem = document.getElementById("character-wrapper-3");
+    elem.classList.add("jump");
+    setTimeout(() => {
+      elem.classList.remove("jump");
+      setTimeout(() => {
+        jumping = false;
+      }, 250);
+    }, 250);
+  }
+}
+
+var position = 0;
+var direction = "";
+var windowWidth = window.innerWidth;
 const moveLeft3 = function () {
-  reverseAll();
-  document.getElementById("charactersc3").classList.add("walkLeft3")
-  console.log("left");
+  if (position >= 0) {
+    position -= 10;
+    document.getElementById("charactersc3").style.transform =
+      "translate(" + position + "px, 0px)";
+    direction = "left";
+
+    if (direction !== "left") {
+      reverseAll();
+    }
+  }
 };
 
 const moveRight3 = function () {
+  if (position <= windowWidth - 700) {
+    position += 10;
+    document.getElementById("charactersc3").style.transform =
+      "translate(" + position + "px, 0px)";
 
-  console.log("right");
-
-  moveAll();
+    direction == "right";
+    if (direction !== "right") {
+      moveAll();
+    }
+  }
 };
+var loaded = false;
+
+if (!loaded) {
+  pause();
+  loaded = true;
+}
