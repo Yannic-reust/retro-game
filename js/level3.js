@@ -74,7 +74,8 @@ function jump() {
 var position = 0;
 var direction = "";
 var windowWidth = window.innerWidth;
-const moveLeft3 = function () {
+
+/*const moveLeft3 = function () {
   console.log("asd");
   if (position >= 0) {
     position -= 10;
@@ -86,10 +87,10 @@ const moveLeft3 = function () {
       reverseAll();
     }
   }
-};
+};*/
 
-const moveRight3 = function () {
-  /*console.log("asd")
+/*const moveRight3 = function () {
+ console.log("asd")
   if (position <= windowWidth - 700) {
     position += 10;
     document.getElementById("charactersc3").style.transform =
@@ -99,42 +100,75 @@ const moveRight3 = function () {
     if (direction !== "right") {
       moveAll();
     }
-  }*/
-};
+  }
+};*/
+
+var object_1 = document.getElementById("charactersc3").getBoundingClientRect();
 
 var createdEnemiesIds = [];
+var notDead = true;
 
 const addEnemie = function (id) {
+  createdEnemiesIds.push(id);
   const e = document.createElement("div");
   e.setAttribute("id", "enemie-" + id);
   e.setAttribute("class", "enemieM");
-
   const container = document.querySelector("#enemieMinions");
   container.appendChild(e);
-  createdEnemiesIds.push(id);
+
+  console.log(document.getElementById("enemie-" + id));
+  setTimeout(() => {
+    if (
+      new collisionClass1(
+        document.getElementById("charactersc3").getBoundingClientRect(),
+        document.getElementById("enemie-" + id).getBoundingClientRect()
+      ).checkCollision1()
+    ) {
+      console.log("hit");
+    }
+  }, 1600);
+
+  if (createdEnemiesIds.length > 5) {
+    cleanUp();
+    console.log("delete");
+  }
 };
 
-var lastIndex = 1;
+class collisionClass1 {
+  constructor(object_one, object_tow) {
+    this.object_one = object_one;
+    this.object_tow = object_tow;
+  }
+  checkCollision1() {
+    return (
+      this.object_one.left < this.object_tow.left + this.object_tow.width &&
+      this.object_one.left + this.object_one.width > this.object_tow.left &&
+      this.object_one.top < this.object_tow.top + this.object_tow.height &&
+      this.object_one.top + this.object_one.height > this.object_tow.top
+    );
+  }
+}
 
+var lastIndex = 1;
+var cleanUpOngoing = false;
 const cleanUp = function () {
-  for (i = lastIndex; i <= shotCount; i++) {
+  cleanUpOngoing = true;
+
+  for (i = lastIndex; i < shotCount; i++) {
     document.getElementById("enemie-" + i).remove();
   }
   createdEnemiesIds = [];
-  lastIndex = shotCount + 1 - createdEnemiesIds.length;
 
-  setTimeout(() => {
-    cleanUp();
-  }, 10000);
+  lastIndex = shotCount;
+  cleanUpOngoing = false;
 };
 
-var notDead = true;
 var shotCount = 0;
 
 const enemieShot = function () {
-  var number = Math.floor(Math.random() * 4);
+  if (!cleanUpOngoing) {
+    var number = Math.floor(Math.random() * 4);
 
-  if (notDead) {
     setTimeout(() => {
       enemieShot();
       shotCount++;
@@ -143,10 +177,7 @@ const enemieShot = function () {
   }
 };
 
-enemieShot();
-setTimeout(() => {
-  cleanUp();
-}, 8000);
+enemieShot(1);
 
 var loaded = false;
 

@@ -358,7 +358,6 @@ body {
   background: url("../../assets/level2/enemie.gif") no-repeat;
   background-position: center;
   background-size: cover;
-
   right: 60px;
   bottom:0px;
   z-index: 9999;
