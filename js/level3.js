@@ -75,6 +75,7 @@ var position = 0;
 var direction = "";
 var windowWidth = window.innerWidth;
 const moveLeft3 = function () {
+  console.log("asd");
   if (position >= 0) {
     position -= 10;
     document.getElementById("charactersc3").style.transform =
@@ -88,6 +89,7 @@ const moveLeft3 = function () {
 };
 
 const moveRight3 = function () {
+  /*console.log("asd")
   if (position <= windowWidth - 700) {
     position += 10;
     document.getElementById("charactersc3").style.transform =
@@ -97,8 +99,55 @@ const moveRight3 = function () {
     if (direction !== "right") {
       moveAll();
     }
+  }*/
+};
+
+var createdEnemiesIds = [];
+
+const addEnemie = function (id) {
+  const e = document.createElement("div");
+  e.setAttribute("id", "enemie-" + id);
+  e.setAttribute("class", "enemieM");
+
+  const container = document.querySelector("#enemieMinions");
+  container.appendChild(e);
+  createdEnemiesIds.push(id);
+};
+
+var lastIndex = 1;
+
+const cleanUp = function () {
+  for (i = lastIndex; i <= shotCount; i++) {
+    document.getElementById("enemie-" + i).remove();
+  }
+  createdEnemiesIds = [];
+  lastIndex = shotCount + 1 - createdEnemiesIds.length;
+
+  setTimeout(() => {
+    cleanUp();
+  }, 10000);
+};
+
+var notDead = true;
+var shotCount = 0;
+
+const enemieShot = function () {
+  var number = Math.floor(Math.random() * 4);
+
+  if (notDead) {
+    setTimeout(() => {
+      enemieShot();
+      shotCount++;
+      addEnemie(shotCount);
+    }, (number + 1) * 1000);
   }
 };
+
+enemieShot();
+setTimeout(() => {
+  cleanUp();
+}, 8000);
+
 var loaded = false;
 
 if (!loaded) {

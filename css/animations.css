@@ -219,3 +219,18 @@
     background-position: -400.25px -250px;
   }
 }
+
+
+.enemieM{
+  animation: enemieM1 2s linear forwards ;
+}
+
+
+@keyframes enemieM1 {
+  from {
+    right: 0px;
+  }
+  to {
+    right: 120%;
+  }
+}
