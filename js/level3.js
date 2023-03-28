@@ -116,7 +116,6 @@ const addEnemie = function (id) {
   const container = document.querySelector("#enemieMinions");
   container.appendChild(e);
 
-  console.log(document.getElementById("enemie-" + id));
   setTimeout(() => {
     if (
       new collisionClass1(
@@ -128,10 +127,22 @@ const addEnemie = function (id) {
     }
   }, 1600);
 
-  if (createdEnemiesIds.length > 5) {
-    cleanUp();
-    console.log("delete");
-  }
+
+  setTimeout(() => {
+    if (createdEnemiesIds.length > 5) {
+      cleanUpOngoing = true;
+  
+      for (i = lastIndex; i < shotCount; i++) {
+        document.getElementById("enemie-" + i).remove();
+      }
+      createdEnemiesIds = [];
+  
+      lastIndex = shotCount;
+      cleanUpOngoing = false;
+    }
+  }, 1700);
+
+ 
 };
 
 class collisionClass1 {
@@ -151,17 +162,6 @@ class collisionClass1 {
 
 var lastIndex = 1;
 var cleanUpOngoing = false;
-const cleanUp = function () {
-  cleanUpOngoing = true;
-
-  for (i = lastIndex; i < shotCount; i++) {
-    document.getElementById("enemie-" + i).remove();
-  }
-  createdEnemiesIds = [];
-
-  lastIndex = shotCount;
-  cleanUpOngoing = false;
-};
 
 var shotCount = 0;
 
