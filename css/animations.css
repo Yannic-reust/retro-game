@@ -234,3 +234,16 @@
     right: 120%;
   }
 }
+.shieldBarDown{
+  animation: shieldBarDown 5s linear forwards;
+}
+
+
+@keyframes shieldBarDown {
+  from {
+    width:90%;
+  }
+  to {
+    width: 0%;
+  }
+}

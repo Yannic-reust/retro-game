@@ -1,3 +1,6 @@
+var shieldActive = false;
+var shieldCoolDown = false;
+
 //=====================================
 // Tastaturabfrage
 //=====================================
@@ -11,8 +14,15 @@ onkeydown = onkeyup = (e) => {
     keys[e.code] = e.type == "keydown";
     if (keys.KeyD && keys.KeyW) jumpRight3();
     else if (keys.KeyA && keys.KeyW) jumpLeft3();
-    else if (keys.KeyA && !keys.KeyD) moveLeft3();
-    else if (keys.KeyD && !keys.KeyA) moveRight3();
+    else if (keys.KeyA && !keys.KeyD) pause();
+    else if (keys.KeyD && !keys.KeyA) {
+      if(!shieldCoolDown){
+        shieldBar()
+      }
+      
+      
+    
+      }
     else if (keys.KeyW && !keys.KeyS) jump();
     else if (keys.KeyA && keys.KeyD) pause();
     else if (!keys.KeyA && !keys.KeyD) pause();
@@ -71,42 +81,39 @@ function jump() {
   }
 }
 
+
+
+const shieldBar = function() {
+
+  shieldActive = true;
+  shieldCoolDown = true;
+  document.getElementById("shieldBar").classList.add("shieldBarDown")
+
+  setTimeout(() => {
+    shieldActive = false;
+  }, 250);
+  setTimeout(() => {
+        shieldCoolDown = false;
+        document.getElementById("shieldBar").classList.remove("shieldBarDown")
+  }, 5000);
+  
+
+  
+}
+
+
+
 var position = 0;
 var direction = "";
 var windowWidth = window.innerWidth;
 
-/*const moveLeft3 = function () {
-  console.log("asd");
-  if (position >= 0) {
-    position -= 10;
-    document.getElementById("charactersc3").style.transform =
-      "translate(" + position + "px, 0px)";
-    direction = "left";
 
-    if (direction !== "left") {
-      reverseAll();
-    }
-  }
-};*/
-
-/*const moveRight3 = function () {
- console.log("asd")
-  if (position <= windowWidth - 700) {
-    position += 10;
-    document.getElementById("charactersc3").style.transform =
-      "translate(" + position + "px, 0px)";
-
-    direction == "right";
-    if (direction !== "right") {
-      moveAll();
-    }
-  }
-};*/
 
 var object_1 = document.getElementById("charactersc3").getBoundingClientRect();
 
 var createdEnemiesIds = [];
 var notDead = true;
+var shieldActive = false;
 
 const addEnemie = function (id) {
   createdEnemiesIds.push(id);
@@ -123,7 +130,13 @@ const addEnemie = function (id) {
         document.getElementById("enemie-" + id).getBoundingClientRect()
       ).checkCollision1()
     ) {
-      console.log("hit");
+      
+      if(shieldActive){
+        console.log("rebound");
+      }
+      else{
+        console.log("hit");
+      }
     }
   }, 1600);
 
