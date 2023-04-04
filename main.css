@@ -417,7 +417,7 @@ body {
   bottom: 46px;
   left: 5%;
   transform: scale(-1, 1);
-  background-color: red;
+
   visibility: hidden;
 }
 

@@ -9,6 +9,9 @@ const infoGuyBoxAnim = infoGuyBox.getAnimations()[0];
 const char = document.getElementById("character");
 const infoGuyAnim = document.getElementById("infoGuy");
 
+const groundAnimation = ground1.getAnimations()[0];
+var showScore = 0;
+
 var jumping = false;
 
 function jump() {
@@ -51,13 +54,21 @@ function nextLevel() {
 }
 
 function jumpRight() {
-  //scoreIncrease(10);
-  console.log(groundAnimation.currentTime / 1000);
+  showScore = groundAnimation.currentTime / 1000;
+  document.getElementById("scoreText").innerHTML = showScore
+    .toString()
+    .substring(0, 4);
+
+  if (showScore >= 2) {
+    document.getElementById("levelDone").classList.add("visible");
+    enableKeyboard = false;
+    pause();
+  }
   jump();
+
   moveRight();
 }
 function jumpLeft() {
-  //scoreDecrease(10);
   moveLeft();
   jump();
 }
@@ -74,16 +85,12 @@ onkeydown = onkeyup = (e) => {
   if (enableKeyboard) {
     keys[e.code] = e.type == "keydown";
     if (keys.KeyW && keys.KeyD) {
-      console.log("jumpright");
       jumpRight();
     } else if (keys.KeyW && keys.KeyA) {
-      console.log("jumpleft");
       jumpLeft();
     } else if (keys.KeyA && !keys.KeyD) {
-      console.log("moveleft");
       moveLeft();
     } else if (keys.KeyD && !keys.KeyA) {
-      console.log("moveright");
       moveRight();
     } else if (keys.KeyW && !keys.KeyS) jump();
     else if (keys.KeyA && keys.KeyD) pause();
@@ -147,7 +154,6 @@ function myFunc() {
 }
 
 const moveLeft = function () {
-  //scoreDecrease(1);
   checkColisonGuy();
   collisionHole();
   if (atStart) return;
@@ -160,12 +166,17 @@ const moveLeft = function () {
   lastDirection = "left";
 };
 
-const groundAnimation = ground1.getAnimations()[0];
-var showScore = 0;
-//showScore;
 const moveRight = function () {
-  //scoreIncrease(1);
-  console.log(groundAnimation.currentTime / 1000);
+  showScore = groundAnimation.currentTime / 1000;
+  document.getElementById("scoreText").innerHTML = showScore
+    .toString()
+    .substring(0, 4);
+  if (showScore >= 50) {
+    document.getElementById("levelDone").classList.add("visible");
+    enableKeyboard = false;
+    pause();
+  }
+
   checkColisonGuy();
   collisionHole();
   if (atEnd) return;

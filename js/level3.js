@@ -200,8 +200,8 @@ function hitEnemie() {
   enemie.classList.add("visible", "attackBoss");
   setTimeout(() => {
     enemie.classList.remove("visible", "attackBoss");
-    console.log(health);
-    health = health - 30;
+
+    health = health - 10;
     document.getElementById("healtBarBoss").style.width = health + "%";
     if (health == 0) {
       document.getElementById("WinScreen").classList.add("visible");
