@@ -59,7 +59,7 @@ body {
   position: absolute;
   bottom: 27.5%;
   left: calc(50vw - 100px);
-  z-index: 9999;
+  z-index: 9000;
   padding: 1rem 2rem;
   opacity: 0;
   visibility: hidden;
@@ -82,7 +82,7 @@ body {
   background-position: center;
   background-size: cover;
   position: absolute;
-  z-index: 9999;
+  z-index: 9000;
   width: 200px;
   height: 200px;
 }
@@ -104,7 +104,7 @@ body {
   background-position: center;
   background-size: cover;
   position: absolute;
-  z-index: 9999;
+  z-index: 9100;
   width: 200px;
   height: 200px;
   opacity: 0;
@@ -166,11 +166,11 @@ body {
 .character-wrapper {
   width: 100px;
   height: 150px;
-  z-index: 2;
+
   position: absolute;
   scale: 0.769230769;
   transition: transform 0.5s;
-  z-index: 9998;
+  z-index: 9200;
 }
 
 .second-scene #character-wrapper-2 {
@@ -182,7 +182,7 @@ body {
   position: absolute;
   width: 300px;
   height: 100px;
-  z-index: 9997;
+  z-index: 9300;
   position: absolute;
   bottom: 140px;
   left: 300px;
@@ -288,7 +288,7 @@ body {
   top: 0;
   left: 0;
   background-color: rgb(0, 0, 0, 0.5);
-  z-index: 9998;
+  z-index: 9999;
 }
 #deadWrapper p {
   font-size: 200px;
@@ -318,11 +318,8 @@ body {
   overflow-x: hidden;
 }
 #sceneFinal #enemieFinal {
+  width: 100%;
   height: 368px;
-  position: absolute;
-  bottom: 48px;
-  right: 100px;
-  width: 517.44px;
   z-index: 80;
   background-image: url("assets/level3/finalBoss.png");
 }
@@ -348,7 +345,7 @@ body {
   height: 260px;
   right: 460px;
   bottom: 48px;
-  z-index: 9999;
+  z-index: 9300;
 }
 .enemieM {
   position: absolute;
@@ -359,7 +356,7 @@ body {
   background-size: cover;
   right: 60px;
   bottom: 0px;
-  z-index: 9999;
+  z-index: 9300;
 }
 
 .shieldBarWrapper {
@@ -369,7 +366,7 @@ body {
   height: 60px;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.2);
-  z-index: 9999;
+  z-index: 9300;
   display: flex;
 }
 #shieldBar {
@@ -387,14 +384,14 @@ body {
   position: absolute;
   width: 60px;
   height: 10px;
-  z-index: 9997;
+  z-index: 9300;
 }
 
 #shiledWrapper #relative {
   position: relative;
   width: 100%;
   height: 100%;
-  z-index: 9998;
+  z-index: 9300;
 }
 
 #shiledWrapper #relative #shield {
@@ -403,8 +400,83 @@ body {
   border: 2px black solid;
   width: 100%;
   height: 10px;
-  z-index: 9998;
+  z-index: 93000;
   position: absolute;
   left: 0px;
   top: 0px;
+}
+
+#enemieMinionRebound {
+  background: url("../../assets/level2/enemie.gif") no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  z-index: 9000;
+  width: 60px;
+  height: 60px;
+  bottom: 46px;
+  left: 5%;
+  transform: scale(-1, 1);
+  background-color: red;
+  visibility: hidden;
+}
+
+#bossWrapper {
+  height: 468px;
+  position: absolute;
+  bottom: 48px;
+  right: 100px;
+  width: 517.44px;
+  z-index: 9100;
+}
+#bossWrapper #healtBarBossWrapper {
+  position: relative;
+  width: 100%;
+  height: 100px;
+}
+
+#bossWrapper #healtBarBossWrapper #healtBarBoss {
+  width: 60%;
+  margin-left: 30%;
+  background-color: white;
+  height: 20px;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  z-index: 9102;
+}
+#bossWrapper #healtBarBossWrapper #healtBarBossBackground {
+  width: 60%;
+  margin-left: 30%;
+  height: 20px;
+  position: absolute;
+  background-color: red;
+  top: 40px;
+  left: 0;
+  z-index: 9101;
+}
+#WinScreen {
+  position: absolute;
+  visibility: hidden;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  flex-direction: column;
+  top: 0;
+  left: 0;
+  background-color: rgb(0, 0, 0, 0.5);
+  z-index: 9999;
+}
+#WinScreen a {
+  font-size: 4rem;
+  color: white;
+  margin-top: 6rem;
+}
+#WinScreen p {
+  font-size: 8rem;
+  width: 60%;
+  color: white;
+  text-align: center;
 }

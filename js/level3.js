@@ -121,9 +121,9 @@ const addEnemie = function (id) {
       ).checkCollision1()
     ) {
       if (shieldActive) {
-        console.log("rebound");
+        document.getElementById("enemie-" + id).remove();
+        hitEnemie();
       } else {
-        console.log("hit");
         rip = true;
         document.getElementById("deadWrapper").classList.add("visible");
       }
@@ -135,7 +135,9 @@ const addEnemie = function (id) {
       cleanUpOngoing = true;
 
       for (i = lastIndex; i < shotCount; i++) {
-        document.getElementById("enemie-" + i).remove();
+        if (document.getElementById("enemie-" + i)) {
+          document.getElementById("enemie-" + i).remove();
+        }
       }
       createdEnemiesIds = [];
 
@@ -166,13 +168,14 @@ var cleanUpOngoing = false;
 var shotCount = 0;
 
 const enemieShot = function () {
-  if (!cleanUpOngoing && !rip) {
+  if (!cleanUpOngoing) {
     var number = Math.floor(Math.random() * 4);
-
     setTimeout(() => {
       enemieShot();
       shotCount++;
-      addEnemie(shotCount);
+      if (!rip) {
+        addEnemie(shotCount);
+      }
     }, (number + 1) * 1000);
   }
 };
@@ -187,10 +190,23 @@ if (!loaded) {
 }
 
 function finalNextTry() {
-  console.log("reset Game");
-  /*resetGame();
-  document.getElementById("deadWrapper").classList.remove("visible");
-  showScore = 0;
-  score = 0;
-  document.getElementById("scoreText").innerHTML = showScore;*/
+  window.location.reload();
+
+  enemieShot(1);
+}
+var health = 60;
+function hitEnemie() {
+  var enemie = document.getElementById("enemieMinionRebound");
+  enemie.classList.add("visible", "attackBoss");
+  setTimeout(() => {
+    enemie.classList.remove("visible", "attackBoss");
+    console.log(health);
+    health = health - 30;
+    document.getElementById("healtBarBoss").style.width = health + "%";
+    if (health == 0) {
+      document.getElementById("WinScreen").classList.add("visible");
+      rip = true;
+      shieldActive = true;
+    }
+  }, 2000);
 }

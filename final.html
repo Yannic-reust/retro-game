@@ -13,6 +13,11 @@
   </head>
   <body>
     <div id="sceneFinal">
+      <div id="WinScreen">
+        <p>You won against the evil robots</p>
+        <a href="/">Play Again</a>
+      </div>
+
       <div id="deadWrapper">
         <p>You Died</p>
         <button onclick="finalNextTry()">Try Again</button>
@@ -29,11 +34,22 @@
 
       <div id="backgroundFinal"></div>
       <div id="groundFinal"></div>
-      <div id="enemieFinal"></div>
+      <div id="bossWrapper">
+        <div id="healtBarBossWrapper">
+          <div id="healtBarBoss"></div>
+          <div id="healtBarBossBackground"></div>
+        </div>
+        <div id="enemieFinal"></div>
+      </div>
+
       <div id="enemieMinions"></div>
+
+      <div id="enemieMinionRebound"></div>
+
       <div id="character-wrapper-3" class="character-wrapper">
         <div id="charactersc3" class="character"></div>
       </div>
+
       <div id="shiledWrapper">
         <div id="relative">
           <div id="shield"></div>

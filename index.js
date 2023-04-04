@@ -128,20 +128,3 @@ function typeWriter() {
     setTimeout(typeWriter, speed);
   }
 }
-
-
-
-class collisionClass {
-  constructor(object_one, object_tow) {
-    this.object_one = object_one;
-    this.object_tow = object_tow;
-  }
-  checkCollision() {
-    return (
-      this.object_one.left < this.object_tow.left + this.object_tow.width &&
-      this.object_one.left + this.object_one.width > this.object_tow.left &&
-      this.object_one.top < this.object_tow.top + this.object_tow.height &&
-      this.object_one.top + this.object_one.height > this.object_tow.top
-    );
-  }
-}

@@ -261,3 +261,15 @@
     transform: rotate(90deg);
   }
 }
+
+.attackBoss {
+  animation: attackBossAnimation 2s linear normal;
+}
+@keyframes attackBossAnimation {
+  from {
+    left: 5%;
+  }
+  to {
+    left: 85%;
+  }
+}
