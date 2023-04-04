@@ -220,11 +220,9 @@
   }
 }
 
-
-.enemieM{
-  animation: enemieM1 2s linear forwards ;
+.enemieM {
+  animation: enemieM1 2s linear forwards;
 }
-
 
 @keyframes enemieM1 {
   from {
@@ -234,16 +232,32 @@
     right: 120%;
   }
 }
-.shieldBarDown{
+.shieldBarDown {
   animation: shieldBarDown 5s linear forwards;
 }
 
-
 @keyframes shieldBarDown {
   from {
-    width:90%;
+    width: 90%;
   }
   to {
     width: 0%;
+  }
+}
+.shieldMovement {
+  animation: shieldMovementPlayer 0.00001s linear forwards;
+}
+
+@keyframes shieldMovementPlayer {
+  from {
+    background-color: skyblue;
+    top: 0px;
+    left: 20px;
+    transform: rotate(0deg);
+  }
+  to {
+    top: 70px;
+    left: 60px;
+    transform: rotate(90deg);
   }
 }

@@ -1,5 +1,6 @@
 var shieldActive = false;
 var shieldCoolDown = false;
+var rip = false;
 
 //=====================================
 // Tastaturabfrage
@@ -16,14 +17,10 @@ onkeydown = onkeyup = (e) => {
     else if (keys.KeyA && keys.KeyW) jumpLeft3();
     else if (keys.KeyA && !keys.KeyD) pause();
     else if (keys.KeyD && !keys.KeyA) {
-      if(!shieldCoolDown){
-        shieldBar()
+      if (!shieldCoolDown) {
+        shieldBar();
       }
-      
-      
-    
-      }
-    else if (keys.KeyW && !keys.KeyS) jump();
+    } else if (keys.KeyW && !keys.KeyS) jump();
     else if (keys.KeyA && keys.KeyD) pause();
     else if (!keys.KeyA && !keys.KeyD) pause();
   }
@@ -70,10 +67,11 @@ var jumping = false;
 function jump() {
   if (!jumping) {
     jumping = true;
-    var elem = document.getElementById("character-wrapper-3");
-    elem.classList.add("jump");
+    document.getElementById("character-wrapper-3").classList.add("jump");
+    document.getElementById("shiledWrapper").classList.add("jump");
     setTimeout(() => {
-      elem.classList.remove("jump");
+      document.getElementById("character-wrapper-3").classList.remove("jump");
+      document.getElementById("shiledWrapper").classList.remove("jump");
       setTimeout(() => {
         jumping = false;
       }, 250);
@@ -81,33 +79,25 @@ function jump() {
   }
 }
 
-
-
-const shieldBar = function() {
-
+const shieldBar = function () {
   shieldActive = true;
   shieldCoolDown = true;
-  document.getElementById("shieldBar").classList.add("shieldBarDown")
+  document.getElementById("shieldBar").classList.add("shieldBarDown");
+  document.getElementById("shield").classList.add("shieldMovement");
 
   setTimeout(() => {
     shieldActive = false;
-  }, 250);
+    document.getElementById("shield").classList.remove("shieldMovement");
+  }, 500);
   setTimeout(() => {
-        shieldCoolDown = false;
-        document.getElementById("shieldBar").classList.remove("shieldBarDown")
+    shieldCoolDown = false;
+    document.getElementById("shieldBar").classList.remove("shieldBarDown");
   }, 5000);
-  
-
-  
-}
-
-
+};
 
 var position = 0;
 var direction = "";
 var windowWidth = window.innerWidth;
-
-
 
 var object_1 = document.getElementById("charactersc3").getBoundingClientRect();
 
@@ -130,32 +120,29 @@ const addEnemie = function (id) {
         document.getElementById("enemie-" + id).getBoundingClientRect()
       ).checkCollision1()
     ) {
-      
-      if(shieldActive){
+      if (shieldActive) {
         console.log("rebound");
-      }
-      else{
+      } else {
         console.log("hit");
+        rip = true;
+        document.getElementById("deadWrapper").classList.add("visible");
       }
     }
   }, 1600);
 
-
   setTimeout(() => {
     if (createdEnemiesIds.length > 5) {
       cleanUpOngoing = true;
-  
+
       for (i = lastIndex; i < shotCount; i++) {
         document.getElementById("enemie-" + i).remove();
       }
       createdEnemiesIds = [];
-  
+
       lastIndex = shotCount;
       cleanUpOngoing = false;
     }
   }, 1700);
-
- 
 };
 
 class collisionClass1 {
@@ -179,7 +166,7 @@ var cleanUpOngoing = false;
 var shotCount = 0;
 
 const enemieShot = function () {
-  if (!cleanUpOngoing) {
+  if (!cleanUpOngoing && !rip) {
     var number = Math.floor(Math.random() * 4);
 
     setTimeout(() => {
@@ -197,4 +184,13 @@ var loaded = false;
 if (!loaded) {
   pause();
   loaded = true;
+}
+
+function finalNextTry() {
+  console.log("reset Game");
+  /*resetGame();
+  document.getElementById("deadWrapper").classList.remove("visible");
+  showScore = 0;
+  score = 0;
+  document.getElementById("scoreText").innerHTML = showScore;*/
 }
