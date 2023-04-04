@@ -51,15 +51,15 @@ function nextLevel() {
 }
 
 function jumpRight() {
-  scoreIncrease(10)
-  scoreIncrease();
-  moveRight()
+  //scoreIncrease(10);
+  console.log(groundAnimation.currentTime / 1000);
   jump();
+  moveRight();
 }
 function jumpLeft() {
-  scoreDecrease(10);
- moveLeft() 
- jump();
+  //scoreDecrease(10);
+  moveLeft();
+  jump();
 }
 
 //=====================================
@@ -71,14 +71,21 @@ globalThis.addEventListener("up", onkeyup, false);
 
 let keys = {};
 onkeydown = onkeyup = (e) => {
-  pause();
   if (enableKeyboard) {
     keys[e.code] = e.type == "keydown";
-    if (keys.KeyD && keys.KeyW) jumpRight();
-    else if (keys.KeyA && keys.KeyW) jumpLeft();
-    else if (keys.KeyA && !keys.KeyD) moveLeft();
-    else if (keys.KeyD && !keys.KeyA) moveRight();
-    else if (keys.KeyW && !keys.KeyS) jump();
+    if (keys.KeyW && keys.KeyD) {
+      console.log("jumpright");
+      jumpRight();
+    } else if (keys.KeyW && keys.KeyA) {
+      console.log("jumpleft");
+      jumpLeft();
+    } else if (keys.KeyA && !keys.KeyD) {
+      console.log("moveleft");
+      moveLeft();
+    } else if (keys.KeyD && !keys.KeyA) {
+      console.log("moveright");
+      moveRight();
+    } else if (keys.KeyW && !keys.KeyS) jump();
     else if (keys.KeyA && keys.KeyD) pause();
     else if (!keys.KeyA && !keys.KeyD) pause();
   }
@@ -139,9 +146,8 @@ function myFunc() {
   pause();
 }
 
-
 const moveLeft = function () {
-  scoreDecrease(1);
+  //scoreDecrease(1);
   checkColisonGuy();
   collisionHole();
   if (atStart) return;
@@ -154,8 +160,12 @@ const moveLeft = function () {
   lastDirection = "left";
 };
 
+const groundAnimation = ground1.getAnimations()[0];
+var showScore = 0;
+//showScore;
 const moveRight = function () {
-  scoreIncrease(1);
+  //scoreIncrease(1);
+  console.log(groundAnimation.currentTime / 1000);
   checkColisonGuy();
   collisionHole();
   if (atEnd) return;

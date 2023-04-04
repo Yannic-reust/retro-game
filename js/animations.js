@@ -1,11 +1,12 @@
 var score = 0;
 var showScore = 0;
 
-function scoreIncrease(e) {
+/*function scoreIncrease(e) {
   if (score == showScore) {
-    showScore + e;
+    showScore = showScore + e;
   }
-  score + e;
+  score = score + e;
+  console.log(score);
   document.getElementById("scoreText").innerHTML = showScore;
   if (showScore > 175) {
     document.getElementById("levelDone").classList.add("visible");
@@ -15,4 +16,4 @@ function scoreIncrease(e) {
 }
 function scoreDecrease(e) {
   score - e;
-}
+}*/
