@@ -1,9 +1,7 @@
-
 var score = 0;
 var showScore = 0;
 
-function scoreIncrease (e) {
-  console.log(e)
+function scoreIncrease(e) {
   if (score == showScore) {
     showScore + e;
   }
@@ -14,8 +12,7 @@ function scoreIncrease (e) {
     enableKeyboard = false;
     pause();
   }
-
-};
-function scoreDecrease  (e) {
+}
+function scoreDecrease(e) {
   score - e;
-};
+}
