@@ -125,10 +125,11 @@ const addEnemie = function (id) {
         hitEnemie();
       } else {
         rip = true;
+
         document.getElementById("deadWrapper").classList.add("visible");
       }
     }
-  }, 1600);
+  }, 1550);
 
   setTimeout(() => {
     if (createdEnemiesIds.length > 5) {

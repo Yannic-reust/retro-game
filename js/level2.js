@@ -59,10 +59,10 @@ function jumpRight() {
     .toString()
     .substring(0, 4);
 
-  if (showScore >= 2) {
+  if (showScore >= 15) {
+    pause();
     document.getElementById("levelDone").classList.add("visible");
     enableKeyboard = false;
-    pause();
   }
   jump();
 
@@ -171,7 +171,8 @@ const moveRight = function () {
   document.getElementById("scoreText").innerHTML = showScore
     .toString()
     .substring(0, 4);
-  if (showScore >= 50) {
+  console.log(showScore);
+  if (showScore >= 15) {
     document.getElementById("levelDone").classList.add("visible");
     enableKeyboard = false;
     pause();

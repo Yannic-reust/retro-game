@@ -48,9 +48,25 @@ function collisionHole() {
   var object_3 = box2.getBoundingClientRect();
   var object_4 = box4.getBoundingClientRect();
 
-  var object_5 = enemieGround1.getBoundingClientRect();
-  var object_6 = enemieGround2.getBoundingClientRect();
-  var object_7 = enemieGround3.getBoundingClientRect();
+  var object_5 = {
+    left: enemieGround1.getBoundingClientRect().left,
+    top: enemieGround1.getBoundingClientRect().top,
+    height: enemieGround1.getBoundingClientRect().height,
+    width: enemieGround1.getBoundingClientRect().width,
+  };
+
+  var object_6 = {
+    left: enemieGround2.getBoundingClientRect().left,
+    top: enemieGround2.getBoundingClientRect().top,
+    height: enemieGround2.getBoundingClientRect().height,
+    width: enemieGround2.getBoundingClientRect().width,
+  };
+  var object_7 = {
+    left: enemieGround3.getBoundingClientRect().left,
+    top: enemieGround3.getBoundingClientRect().top,
+    height: enemieGround3.getBoundingClientRect().height,
+    width: enemieGround3.getBoundingClientRect().width,
+  };
 
   if (new collisionClass(object_1, object_2).checkCollision()) {
     document.getElementById("deadWrapper").classList.add("visible");
