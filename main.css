@@ -19,7 +19,22 @@
   margin-top: 40px;
   text-align: center;
 }
+.popup h3 {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.popup .character {
+ display: flex;
+flex-direction: column;
+width: 50%;
+justify-content: flex-end;
+align-items: center;
+}
 
+.popup .characterSelection{
+  display: flex;
+}
 body {
   display: flex;
   align-items: center;
