@@ -172,7 +172,7 @@ const moveRight = function () {
     .toString()
     .substring(0, 4);
   console.log(showScore);
-  if (showScore >= 15) {
+  if (showScore >= 10) {
     document.getElementById("levelDone").classList.add("visible");
     enableKeyboard = false;
     pause();
