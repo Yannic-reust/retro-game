@@ -30,7 +30,8 @@
 
       <h3>Select Location</h3>
       <div>
-        <select name="Citys" id="city" onchange="ApiCall(this)">"
+        <select name="Citys" id="city" onchange="ApiCall(this)">
+          "
           <option value="">Select City</option>
           <option value="London">London</option>
           <option value="New York">New York</option>
@@ -38,7 +39,14 @@
           <option value="Dubai">Dubai</option>
           <option value="Berlin">Berlin</option>
         </select>
-       
+        <div class="clouds-background">
+          <img
+            src="./assets/level2/cloud_preview.png"
+            alt="clouds"
+            id="cloudPreview"
+          />
+        </div>
+
         <!-- loding spinner -->
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -46,7 +54,7 @@
           height="24"
           viewBox="0 0 24 24"
           id="loadingSpinner"
-          style="visibility: hidden;"
+          style="visibility: hidden"
         >
           <path
             fill="currentColor"
