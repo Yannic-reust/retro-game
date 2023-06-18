@@ -1,5 +1,21 @@
 var loading = false;
-document.getElementById("cloudPreview").style.visibility = "hidden";
+
+
+var colors = {
+  playerSrc: "./assets/player_sprite.png",
+  clouds: ""
+};
+
+
+
+
+
+function selectPlayer(e){
+  console.log(e.value)
+}
+
+
+
 function ApiCall(e) {
   document.getElementById("loadingSpinner").style.visibility = "visible";
   loading = true;

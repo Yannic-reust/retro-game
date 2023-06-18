@@ -1,7 +1,15 @@
 /* general */
 
+
+console.log(colors.playerSrc)
+//document.getElementById("character").src = ;
+
 const char = document.getElementById("character");
 var speed = 50;
+
+
+
+
 /* first scene */
 
 const intro = document.getElementById("intro");

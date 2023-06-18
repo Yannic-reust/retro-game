@@ -15,15 +15,15 @@
         <div class="character">
           <img src="./assets/player1.png" alt="player 1" width="120px" />
           <div>
-            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" />
-            <label for="vehicle1"> I have a bike</label>
+            <input type="radio" id="vehicle1" name="vehicle1" value="./assets/player_sprite.png" onclick="selectPlayer(this)"/>
+            <label for="vehicle1">Player 1</label>
           </div>
         </div>
         <div class="character">
           <img src="./assets/player2.png" alt="player 2" width="110px" />
           <div>
-            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" />
-            <label for="vehicle1"> I have a bike</label>
+            <input type="radio"  name="vehicle1" value="./assets/player2_sprite.png"  onclick="selectPlayer(this)"/>
+            <label for="vehicle1">Player 2</label>
           </div>
         </div>
       </div>
@@ -77,6 +77,10 @@
           </path>
         </svg>
       </div>
+      <a href="level1.html">
+        <button onclick="">Start Game</button>
+      </a>
+     
     </div>
   </body>
 </html>
