@@ -1,5 +1,5 @@
 var loading = false;
-
+document.getElementById("cloudPreview").style.visibility = "hidden";
 function ApiCall(e) {
   document.getElementById("loadingSpinner").style.visibility = "visible";
   loading = true;
@@ -16,13 +16,28 @@ function ApiCall(e) {
   if (res === "Sunny") {
     document.getElementById("cloudPreview").src = '';
     document.getElementById("textPreview").innerHTML = "sunny"
+    document.getElementById("cloudPreview").style.visibility = "hidden";
     console.log("sunny");
-  } else if (res === "Overcast") {
+  }else if (res === "Clear") {
+    document.getElementById("cloudPreview").src = '';
+    document.getElementById("textPreview").innerHTML = "clear"
+    document.getElementById("cloudPreview").style.visibility = "hidden";
+    console.log("clear");
+  } 
+  
+  else if (res === "Overcast" || res === "Partly cloudy") {
+    document.getElementById("cloudPreview").src = '../assets/level2/cloud_preview.png';
+    document.getElementById("textPreview").innerHTML = "Overcast"
+    document.getElementById("cloudPreview").style.visibility = "visible";
     console.log("overcast");
   }
-  else if (res === "Clear") {
-    console.log("clear");
+  else if (res === "Rain") {
+    document.getElementById("cloudPreview").src = '../assets/level2/cloud_preview_2.png';
+    document.getElementById("textPreview").innerHTML = "Rain"
+    document.getElementById("cloudPreview").style.visibility = "visible";
+    console.log("rain");
   }
+  
   else{
     console.log(res);
   }
