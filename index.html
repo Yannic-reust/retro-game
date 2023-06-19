@@ -4,7 +4,6 @@
     <meta charset="utf-8" />
     <title>Retro Jumper</title>
     <script defer src="./js/configure.js"></script>
-    <script defer src="./js/collision.js"></script>
     <link rel="stylesheet" href="main.css" />
   </head>
   <body>
@@ -15,7 +14,7 @@
         <div class="character">
           <img src="./assets/player1.png" alt="player 1" width="120px" />
           <div>
-            <input type="radio" id="vehicle1" name="vehicle1" value="./assets/player_sprite.png" onclick="selectPlayer(this)"/>
+            <input type="radio" id="vehicle1" name="vehicle1" value="./assets/player_sprite.png" onclick="selectPlayer(this)" checked="checked"/>
             <label for="vehicle1">Player 1</label>
           </div>
         </div>
@@ -38,12 +37,14 @@
           <option value="Los Angeles">Los Angeles</option>
           <option value="Dubai">Dubai</option>
           <option value="Berlin">Berlin</option>
+          <option value="Meghalaya">Meghalaya</option>
         </select>
         <div class="clouds-background">
           <img
             src=""
             alt="clouds"
             id="cloudPreview"
+            style="visibility: hidden;"
           />
           <p id="textPreview">No weather selected</p>
         </div>

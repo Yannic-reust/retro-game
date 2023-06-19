@@ -14,3 +14,6 @@ In the Second Level use W to Jump an D to activate the Shield.
 
 ### Start the Game
 In VSCode after installing the Live Server Extension, you click on Go Live in the bottom-right corner. The server will start, and you can access it on port 5500. 
+
+### Game Settings
+The best Resolution for the Game is 1920 x 1080px

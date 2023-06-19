@@ -1,17 +1,17 @@
 var loading = false;
 
 
-var colors = {
-  playerSrc: "./assets/player_sprite.png",
-  clouds: ""
-};
+
+  var playerSrc ="./assets/player_sprite.png"
+  var clouds= ""
 
 
 
 
 
 function selectPlayer(e){
-  console.log(e.value)
+  playerSrc = e.value
+  localStorage.playerSrc = playerSrc
 }
 
 
@@ -51,7 +51,8 @@ function ApiCall(e) {
     document.getElementById("cloudPreview").src = '../assets/level2/cloud_preview_2.png';
     document.getElementById("textPreview").innerHTML = "Rain"
     document.getElementById("cloudPreview").style.visibility = "visible";
-    console.log("rain");
+    console.log("Rain");
+  
   }
   
   else{

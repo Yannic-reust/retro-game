@@ -1,8 +1,7 @@
 /* general */
 
 
-console.log(colors.playerSrc)
-//document.getElementById("character").src = ;
+document.getElementById("character-sc1").style.backgroundImage = `url(${localStorage.playerSrc})`
 
 const char = document.getElementById("character");
 var speed = 50;
