@@ -2,6 +2,8 @@ var shieldActive = false;
 var shieldCoolDown = false;
 var rip = false;
 
+document.getElementById("charactersc3").style.backgroundImage = `url(${localStorage.playerSrc})`
+
 //=====================================
 // Tastaturabfrage
 //=====================================
