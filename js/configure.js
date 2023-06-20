@@ -47,7 +47,7 @@ function ApiCall(e) {
     document.getElementById("cloudPreview").style.visibility = "visible";
     console.log("overcast");
   }
-  else if (res === "Rain") {
+  else if (res.includes("rain")) {
     document.getElementById("cloudPreview").src = '../assets/level2/cloud_preview_2.png';
     document.getElementById("textPreview").innerHTML = "Rain"
     document.getElementById("cloudPreview").style.visibility = "visible";

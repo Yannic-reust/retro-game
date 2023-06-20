@@ -9,79 +9,91 @@
   <body>
     <div class="popup">
       <h1>Configure your game</h1>
-      <h3>Choose your character</h3>
-      <div class="characterSelection">
-        <div class="character">
-          <img src="./assets/player1.png" alt="player 1" width="120px" />
-          <div>
-            <input type="radio" id="vehicle1" name="vehicle1" value="./assets/player_sprite.png" onclick="selectPlayer(this)" checked="checked"/>
-            <label for="vehicle1">Player 1</label>
-          </div>
+      <div class="content">
+       
+        <div class="characterSelectionWrapper">
+         
+          <h3>Choose your character</h3>
+          <div class="characterSelection">
+            <div class="character">
+              <img src="./assets/player1.png" alt="player 1" width="120px" />
+              <div>
+                <input type="radio" id="vehicle1" name="vehicle1" value="./assets/player_sprite.png" onclick="selectPlayer(this)" checked="checked"/>
+                <label for="vehicle1">Player 1</label>
+              </div>
+            </div>
+            <div class="character">
+              <img src="./assets/player2.png" alt="player 2" width="110px" />
+              <div>
+                <input type="radio"  name="vehicle1" value="./assets/player2_sprite.png"  onclick="selectPlayer(this)"/>
+                <label for="vehicle1">Player 2</label>
+              </div>
+            </div>
         </div>
-        <div class="character">
-          <img src="./assets/player2.png" alt="player 2" width="110px" />
-          <div>
-            <input type="radio"  name="vehicle1" value="./assets/player2_sprite.png"  onclick="selectPlayer(this)"/>
-            <label for="vehicle1">Player 2</label>
-          </div>
+        
         </div>
+  <div class="cloudsWrapper">
+    <h3>Select Location</h3>
+    <div>
+      <select name="Citys" id="city" onchange="ApiCall(this)">
+        
+        <option value="">Select City</option>
+        <option value="London">London</option>
+        <option value="New York">New York</option>
+        <option value="Los Angeles">Los Angeles</option>
+        <option value="Dubai">Dubai</option>
+        <option value="Berlin">Berlin</option>
+        <option value="Meghalaya">Meghalaya</option>
+      </select>
+      <div class="clouds-background">
+        <img
+          src=""
+          alt="clouds"
+          id="cloudPreview"
+          style="visibility: hidden;"
+        />
+        
       </div>
+      <p id="textPreview">No weather selected</p>
 
-      <h3>Select Location</h3>
-      <div>
-        <select name="Citys" id="city" onchange="ApiCall(this)">
-          
-          <option value="">Select City</option>
-          <option value="London">London</option>
-          <option value="New York">New York</option>
-          <option value="Los Angeles">Los Angeles</option>
-          <option value="Dubai">Dubai</option>
-          <option value="Berlin">Berlin</option>
-          <option value="Meghalaya">Meghalaya</option>
-        </select>
-        <div class="clouds-background">
-          <img
-            src=""
-            alt="clouds"
-            id="cloudPreview"
-            style="visibility: hidden;"
-          />
-          <p id="textPreview">No weather selected</p>
-        </div>
-
-        <!-- loding spinner -->
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          id="loadingSpinner"
-          style="visibility: hidden"
+      <!-- loding spinner -->
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        id="loadingSpinner"
+        style="visibility: hidden"
+      >
+        <path
+          fill="currentColor"
+          d="M12 2A10 10 0 1 0 22 12A10 10 0 0 0 12 2Zm0 18a8 8 0 1 1 8-8A8 8 0 0 1 12 20Z"
+          opacity=".5"
+        />
+        <path
+          fill="currentColor"
+          d="M20 12h2A10 10 0 0 0 12 2V4A8 8 0 0 1 20 12Z"
         >
-          <path
-            fill="currentColor"
-            d="M12 2A10 10 0 1 0 22 12A10 10 0 0 0 12 2Zm0 18a8 8 0 1 1 8-8A8 8 0 0 1 12 20Z"
-            opacity=".5"
+          <animateTransform
+            attributeName="transform"
+            dur="1s"
+            from="0 12 12"
+            repeatCount="indefinite"
+            to="360 12 12"
+            type="rotate"
           />
-          <path
-            fill="currentColor"
-            d="M20 12h2A10 10 0 0 0 12 2V4A8 8 0 0 1 20 12Z"
-          >
-            <animateTransform
-              attributeName="transform"
-              dur="1s"
-              from="0 12 12"
-              repeatCount="indefinite"
-              to="360 12 12"
-              type="rotate"
-            />
-          </path>
-        </svg>
-      </div>
-      <a href="level1.html">
-        <button onclick="">Start Game</button>
-      </a>
-     
+        </path>
+      </svg>
     </div>
+   
+   
+  </div>
+
+  </div>
+  <a href="level1.html" class="buttonLink">
+    <button>Start Game</button>
+  </a>
+      </div>
+      
   </body>
 </html>
