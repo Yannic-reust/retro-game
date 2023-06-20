@@ -553,3 +553,8 @@ body {
   color: white;
   text-align: center;
 }
+
+#clouds1{
+  height: 20%;
+  background-size: 200px auto;
+}

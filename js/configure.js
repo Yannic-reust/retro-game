@@ -1,20 +1,12 @@
 var loading = false;
 
+var playerSrc = "./assets/player_sprite.png";
+var clouds = "";
 
-
-  var playerSrc ="./assets/player_sprite.png"
-  var clouds= ""
-
-
-
-
-
-function selectPlayer(e){
-  playerSrc = e.value
-  localStorage.playerSrc = playerSrc
+function selectPlayer(e) {
+  playerSrc = e.value;
+  localStorage.playerSrc = playerSrc;
 }
-
-
 
 function ApiCall(e) {
   document.getElementById("loadingSpinner").style.visibility = "visible";
@@ -30,33 +22,34 @@ function ApiCall(e) {
   const res = JSON.parse(xhr.response).current.condition.text;
 
   if (res === "Sunny") {
-    document.getElementById("cloudPreview").src = '';
-    document.getElementById("textPreview").innerHTML = "sunny"
+    document.getElementById("cloudPreview").src = "";
+    document.getElementById("textPreview").innerHTML = "sunny";
     document.getElementById("cloudPreview").style.visibility = "hidden";
-    console.log("sunny");
-  }else if (res === "Clear") {
-    document.getElementById("cloudPreview").src = '';
-    document.getElementById("textPreview").innerHTML = "clear"
+
+    clouds = "";
+  } else if (res === "Clear") {
+    document.getElementById("cloudPreview").src = "";
+    document.getElementById("textPreview").innerHTML = "clear";
     document.getElementById("cloudPreview").style.visibility = "hidden";
-    console.log("clear");
-  } 
-  
-  else if (res === "Overcast" || res === "Partly cloudy") {
-    document.getElementById("cloudPreview").src = '../assets/level2/cloud_preview.png';
-    document.getElementById("textPreview").innerHTML = "Overcast"
+
+    clouds = "";
+  } else if (res === "Overcast" || res === "Partly cloudy") {
+    document.getElementById("cloudPreview").src =
+      "../assets/level2/cloud_preview.png";
+    document.getElementById("textPreview").innerHTML = "Overcast";
     document.getElementById("cloudPreview").style.visibility = "visible";
-    console.log("overcast");
-  }
-  else if (res.includes("rain")) {
-    document.getElementById("cloudPreview").src = '../assets/level2/cloud_preview_2.png';
-    document.getElementById("textPreview").innerHTML = "Rain"
+
+    clouds = "../assets/level2/cloud_preview.png";
+  } else if (res.includes("rain")) {
+    document.getElementById("cloudPreview").src =
+      "../assets/level2/cloud_preview_2.png";
+    document.getElementById("textPreview").innerHTML = "Rain";
     document.getElementById("cloudPreview").style.visibility = "visible";
-    console.log("Rain");
-  
-  }
-  
-  else{
+
+    clouds = "../assets/level2/cloud_preview_2.png";
+  } else {
     console.log(res);
   }
+  localStorage.clouds = clouds;
   document.getElementById("loadingSpinner").style.visibility = "hidden";
 }

@@ -1,5 +1,3 @@
-/* first scene */
-
 .first-animation-character {
   animation: walkInFrame 3s linear;
   animation-delay: 1s;
@@ -113,7 +111,6 @@
   width: 100%;
   height: 100%;
   scale: 1.3;
-  background: url("../../assets/player_assets.png") no-repeat;
 }
 .character-sc1 {
   animation: walk 0.3s steps(4) infinite;

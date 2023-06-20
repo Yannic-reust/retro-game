@@ -1,4 +1,5 @@
 document.getElementById("charactersc2").style.backgroundImage = `url(${localStorage.playerSrc})`
+document.getElementById("clouds1").style.backgroundImage = `url(${localStorage.clouds})`
 
 const clouds1Anim = clouds1.getAnimations()[0];
 const clouds2Anim = clouds2.getAnimations()[0];
@@ -175,7 +176,6 @@ const moveRight = function () {
   document.getElementById("scoreText").innerHTML = showScore
     .toString()
     .substring(0, 4);
-  console.log(showScore);
   if (showScore >= 10) {
     document.getElementById("levelDone").classList.add("visible");
     enableKeyboard = false;
